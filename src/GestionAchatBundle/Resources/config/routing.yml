@@ -1,0 +1,19 @@
+gestion_achat_homepage:
+    path:     /admin
+    defaults: { _controller: GestionAchatBundle:Default:index }
+
+gestion_achat_fournisseur_create:
+    path:     /create
+    defaults: { _controller: GestionAchatBundle:Fournisseur:create }
+
+gestion_achat_fournisseur_read:
+    path:     /read
+    defaults: { _controller: GestionAchatBundle:Fournisseur:read }
+
+gestion_achat_fournisseur_update:
+    path:     /update/{id}
+    defaults: { _controller: GestionAchatBundle:Fournisseur:update }
+gestion_achat_fournisseur_delete:
+    path:     /delete/{id}
+    defaults: { _controller: GestionAchatBundle:Fournisseur:delete }
+

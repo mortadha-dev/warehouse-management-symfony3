@@ -1,0 +1,17 @@
+user_homepage:
+    path:     /
+    defaults: { _controller: UserBundle:Default:index }
+
+# app/config/routing.yml
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+debou_homepage:
+    path:     /
+    defaults: { _controller: UserBundle:Default:index }
+debou_homepage1:
+    path:     /accueil
+    defaults: { _controller: UserBundle:Default:index }
+debou_backpage:
+    path:     /administration
+    defaults: { _controller: UserBundle:Default:back }
