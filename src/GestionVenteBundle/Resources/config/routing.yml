@@ -1,0 +1,3 @@
+gestion_vente_homepage:
+    path:     /
+    defaults: { _controller: GestionVenteBundle:Default:index }

@@ -1,3 +1,7 @@
+gestion_vente_client:
+    resource: "@GestionVenteBundle/Controller/ClientController.php"
+    type:     annotation
+
 gestion_achat:
     resource: "@GestionAchatBundle/Resources/config/routing.yml"
     prefix:   /
