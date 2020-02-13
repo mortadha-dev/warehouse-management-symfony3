@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c36f2d9e-5cf5-4251-b738-18fb32fa2766" name="Default Changelist" comment="" />
+    <list default="true" id="c36f2d9e-5cf5-4251-b738-18fb32fa2766" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/GestionAchatBundle/Controller/ProduitController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GestionAchatBundle/Resources/views/Default/produit/produit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +63,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1XUUtnffrEB4UsvAqQwNbaZGWJn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Resources/views/frontend" />
