@@ -1,14 +1,17 @@
+
+{% extends 'backend/base.html.twig' %}
+{% block tssou %}
 <html>
 <head>
     <title>List des fournisseurs</title>
     <img src="{{ asset('unnamed.jpg') }}" id="imgLogo" width="350px">
-<h1>Hello mortadha</h1>
 </head>
 <body>
 <center>
     <h1>Liste des fournisseurs</h1>
     <table border="6">
         <tr>
+
             <th>civilite</th>
             <th>nom</th>
             <th>prenom</th>
@@ -16,6 +19,8 @@
             <th>ville</th>
             <th>pays</th>
             <th>adresseEmail</th>
+            <th>Modification</th>
+            <th>suppression</th>
         </tr>
         {% for fournisseur in fournisseurs %}
             <tr>
@@ -26,7 +31,6 @@
                 <td>{{ fournisseur.ville }}</td>
                 <td>{{ fournisseur.pays }}</td>
                 <td>{{ fournisseur.adresseEmail }}</td>
-
                 <td> <a href="{{ path('gestion_achat_fournisseur_update',{'id':fournisseur.id}) }}">Modifier</a></td>
                 <td> <a href="{{ path('gestion_achat_fournisseur_delete',{'id':fournisseur.id}) }}">supprimer</a></td>
 
@@ -37,5 +41,9 @@
 </center>
 
 </body>
+
+
 </html>
+
+{% endblock %}
 

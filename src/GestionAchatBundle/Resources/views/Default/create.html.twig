@@ -1,4 +1,5 @@
-
+{% extends 'backend/base.html.twig' %}
+{% block tssou %}
 <html>
 <head>
     <title>
@@ -6,7 +7,6 @@
     </title>
 </head>
 <body>
-
 <h1>Ajouter un fournisseur</h1>
 <fieldset style="width: 30%">
     {{ form_start(form) }}
@@ -23,3 +23,4 @@
 
 </body>
 </html>
+{% endblock %}

@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c36f2d9e-5cf5-4251-b738-18fb32fa2766" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GestionAchatBundle/Controller/ProduitController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GestionAchatBundle/Resources/views/Default/produit/produit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GestionAchatBundle/Resources/views/Default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/GestionAchatBundle/Resources/views/Default/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/backend/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/backend/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/frontend/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/frontend/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GestionAchatBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GestionAchatBundle/Resources/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GestionAchatBundle/Resources/views/Default/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/GestionAchatBundle/Resources/views/Default/create.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GestionAchatBundle/Resources/views/Default/read.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/GestionAchatBundle/Resources/views/Default/read.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -71,17 +75,17 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Resources/views/frontend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/GestionAchatBundle/Resources/views/Default/produit" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\marww\src\GestionAchatBundle\Resources\views\Default\produit" />
+      <recent name="C:\wamp64\www\marww\src\GestionAchatBundle\Controller" />
       <recent name="C:\wamp64\www\marww\app\Resources\views\frontend" />
       <recent name="C:\wamp64\www\marww\web\Bundles\ressources\front" />
       <recent name="C:\wamp64\www\marww\src\UserBundle\Resources\views\Default" />
-      <recent name="C:\wamp64\www\marww\src\UserBundle\Security" />
-      <recent name="C:\wamp64\www\marww\app\Resources\FOSUserBundle" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -93,9 +97,11 @@
       <command value="s doctrine:generate:form fournisseur" />
       <command value="s doctrine:generate:form GestionAchatBundle:fournisseur" />
       <command value="s doctrine:database:create" />
-      <command value="s doctrine:schema:update --force" />
       <command value="php bin/console fos:user:create testuser" />
       <command value="c dump-autoload" />
+      <command value="s doctrine:generate:form GestionAchatBundle:Produit" />
+      <command value="s doctrine:generate:entity " />
+      <command value="s doctrine:schema:update --force" />
     </option>
   </component>
   <component name="RunDashboard">

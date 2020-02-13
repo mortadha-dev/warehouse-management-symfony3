@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -189,29 +189,118 @@ to get the desired effect
               <p>
                 Gestion achats
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
+                <span class="badge badge-info right">3</span>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="pages/layout/top-nav.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Top Navigation</p>
+                  <p>Produits</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Top Navigation + Sidebar</p>
+              <nav class="mt-2">
+              <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-book"></i>
+                  <p>Fournisseur</p>
+                  <i class="fas fa-angle-left right"></i></br>
+
+                  <span class="badge badge-info right">4</span>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/layout/boxed.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Boxed</p>
-                </a>
-              </li>
-              <li class="nav-item">
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href={{ path('gestion_achat_fournisseur_create') }} class="nav-link">
+                      <i class=" nav-icon"></i>
+
+                      <p>Ajouter des  fournisseurs</p>
+                    </a>
+                  </li>
+                </ul>
+
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href={{ path('gestion_achat_fournisseur_read') }} class="nav-link">
+                      <i class=" nav-icon"></i>
+
+                      <p>liste des  fournisseurs</p>
+                    </a>
+                    </li>
+              </ul>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href={{ path('gestion_achat_fournisseur_read') }} class="nav-link">
+                      <i class=" nav-icon"></i>
+
+                      <p>modifier  fournisseurs</p>
+                    </a>
+                  </li>
+                </ul>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href={{ path('gestion_achat_fournisseur_read') }} class="nav-link">
+                      <i class=" nav-icon"></i>
+
+                      <p>supprimer fournisseur</p>
+                    </a>
+                  </li>
+                </ul>
+              </ul>
+
+              </nav>
+              <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                  <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fas fa-book"></i>
+                      <p>Commandes</p>
+                      <i class="fas fa-angle-left right"></i></br>
+
+                      <span class="badge badge-info right">4</span>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href={{ path('gestion_achat_fournisseur_create') }} class="nav-link">
+                          <i class=" nav-icon"></i>
+
+                          <p>Ajouter des  commandes</p>
+                        </a>
+                      </li>
+                    </ul>
+
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href={{ path('gestion_achat_fournisseur_read') }} class="nav-link">
+                          <i class=" nav-icon"></i>
+
+                          <p>liste des  commandes</p>
+                        </a>
+                      </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href={{ path('gestion_achat_fournisseur_read') }} class="nav-link">
+                          <i class=" nav-icon"></i>
+
+                          <p>modifier  une commande</p>
+                        </a>
+                      </li>
+                    </ul>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href={{ path('gestion_achat_fournisseur_read') }} class="nav-link">
+                          <i class=" nav-icon"></i>
+
+                          <p>supprimer une commande</p>
+                        </a>
+                      </li>
+                    </ul>
+                </ul>
+
+              </nav>
+
+              {#<li class="nav-item">
                 <a href="pages/layout/fixed-sidebar.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Fixed Sidebar</p>
@@ -228,15 +317,17 @@ to get the desired effect
                   <i class="far fa-circle nav-icon"></i>
                   <p>Fixed Footer</p>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/layout/collapsed-sidebar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Collapsed Sidebar</p>
-                </a>
-              </li>
+              </li>#}
             </ul>
           </li>
+        <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
@@ -403,7 +494,7 @@ to get the desired effect
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Dashboard v3</h1>
+            <h1 class="m-0 text-dark"></h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -417,7 +508,7 @@ to get the desired effect
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <div class="content">
+ {#   <div class="content">
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-6">
@@ -666,7 +757,7 @@ to get the desired effect
       <!-- /.container-fluid -->
     </div>
     <!-- /.content -->
-  </div>
+  </div>#}
   <!-- /.content-wrapper -->
 
   <!-- Control Sidebar -->
@@ -675,10 +766,13 @@ to get the desired effect
   </aside>
   <!-- /.control-sidebar -->
   {%  block content %}{% endblock %}
+    <center>
+      {% block tssou %}{% endblock %}
+    </center>
   <!-- Main Footer -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
+    <strong>Copyright &copy;   All rights reserved.</strong>
+
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 3.0.2
     </div>
@@ -699,5 +793,9 @@ to get the desired effect
 <script src="{{ asset('Bundles/ressources/back/plugins/chart.js/Chart.min.js') }}"></script>
 <script src="{{ asset('Bundles/ressources/back/dist/js/demo.js') }}"></script>
 <script src="{{ asset('Bundles/ressources/back/dist/js/pages/dashboard3.js') }}"></script>
+
+</div>
+
 </body>
 </html>
+
