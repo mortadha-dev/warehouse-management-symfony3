@@ -24,7 +24,7 @@ class CommandeVente
     /**
      * @var int
      *
-     * @ORM\Column(name="idClient", type="integer", unique=true)
+     * @ORM\Column(name="idClient", type="string", unique=false)
      */
     private $idClient;
 

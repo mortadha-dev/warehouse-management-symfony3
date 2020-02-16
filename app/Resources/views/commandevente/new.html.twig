@@ -1,0 +1,16 @@
+{% extends '@GestionVente/base/base.html.twig' %}
+
+{% block main_content %}
+    <h1>Commandevente creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('vente_index_commande') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

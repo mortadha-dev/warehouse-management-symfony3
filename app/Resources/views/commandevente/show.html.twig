@@ -1,0 +1,48 @@
+{% extends '@GestionVente/base/base.html.twig' %}
+
+{% block main_content %}
+    <h1>Commandevente</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ commandeVente.id }}</td>
+            </tr>
+            <tr>
+                <th>Idclient</th>
+                <td>{{ commandeVente.idClient }}</td>
+            </tr>
+            <tr>
+                <th>Idlivraison</th>
+                <td>{{ commandeVente.idLivraison }}</td>
+            </tr>
+            <tr>
+                <th>Dateenvoie</th>
+                <td>{% if commandeVente.dateEnvoie %}{{ commandeVente.dateEnvoie|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Datereception</th>
+                <td>{% if commandeVente.dateReception %}{{ commandeVente.dateReception|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Selections</th>
+                <td>{{ commandeVente.selections }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('vente_index_commande') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('vente_edit_commande', { 'id': commandeVente.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

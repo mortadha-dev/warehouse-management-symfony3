@@ -1,3 +1,46 @@
-gestion_vente_homepage:
+vente_homepage:
     path:     /
-    defaults: { _controller: GestionVenteBundle:Default:index }
+    defaults: { _controller: GestionVenteBundle:CommandeVente:index}
+
+#############COMMANDE
+
+vente_index_commande:
+    path:   /commande/index
+    defaults:   { _controller: GestionVenteBundle:CommandeVente:index}
+
+vente_show_commande:
+    path:   /commande/show/{id}
+    defaults:   { _controller: GestionVenteBundle:CommandeVente:show }
+
+vente_delete_commande:
+    path:   /commande/delete/{id}
+    defaults:   { _controller: GestionVenteBundle:CommandeVente:delete}
+
+vente_edit_commande:
+    path:   /commande/edit/{id}
+    defaults:   { _controller: GestionVenteBundle:CommandeVente:edit}
+
+vente_new_commande:
+    path:   /commande/new
+    defaults:   { _controller: GestionVenteBundle:CommandeVente:new}
+
+##############CLIENT
+client_new:
+    path:   /client/new
+    defaults:   { _controller: GestionVenteBundle:Client:new}
+
+client_edit:
+    path:   /client/edit/{id}
+    defaults:   { _controller: GestionVenteBundle:Client:edit}
+
+client_show:
+    path:   /client/show/{id}
+    defaults:   { _controller: GestionVenteBundle:Client:show}
+
+client_index:
+    path:   /client/index
+    defaults:   { _controller: GestionVenteBundle:Client:index}
+
+client_delete:
+    path:   /client/delete/{id}
+    defaults:   { _controller: GestionVenteBundle:Client:delete}

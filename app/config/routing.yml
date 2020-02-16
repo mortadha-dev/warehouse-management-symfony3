@@ -1,6 +1,6 @@
-gestion_vente_client:
-    resource: "@GestionVenteBundle/Controller/ClientController.php"
-    type:     annotation
+gestion_vente:
+    resource: "@GestionVenteBundle/Resources/config/routing.yml"
+    prefix: /vente
 
 gestion_achat:
     resource: "@GestionAchatBundle/Resources/config/routing.yml"
@@ -12,6 +12,7 @@ gestion_achat:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
 user:
     resource: "@UserBundle/Resources/config/routing.yml"
     prefix:   /

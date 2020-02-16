@@ -155,5 +155,10 @@ class Client
     {
         return $this->addresse;
     }
+
+    public function __toString()
+    {
+        return (string) $this->getId();
+    }
 }
 
