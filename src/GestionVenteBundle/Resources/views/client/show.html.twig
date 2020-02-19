@@ -1,0 +1,44 @@
+{% extends '@GestionVente/base/main.html.twig' %}
+
+{% block content %}
+    <h1>Client</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ client.id }}</td>
+            </tr>
+            <tr>
+                <th>Idcompte</th>
+                <td>{{ client.idCompte }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ client.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ client.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Addresse</th>
+                <td>{{ client.addresse }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('client_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('client_edit', { 'id': client.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

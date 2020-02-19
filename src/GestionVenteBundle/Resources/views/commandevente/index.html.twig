@@ -1,0 +1,47 @@
+{% extends '@GestionVente/base/main.html.twig' %}
+
+{% block content %}
+    <h1>Commandeventes list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Idclient</th>
+                <th>Idlivraison</th>
+                <th>Dateenvoie</th>
+                <th>Datereception</th>
+                <th>Selections</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for commandeVente in commandeVentes %}
+            <tr>
+                <td><a href="{{ path('vente_show_commande', { 'id': commandeVente.id }) }}">{{ commandeVente.id }}</a></td>
+                <td>{{ commandeVente.idClient }}</td>
+                <td>{{ commandeVente.idLivraison }}</td>
+                <td>{% if commandeVente.dateEnvoie %}{{ commandeVente.dateEnvoie|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if commandeVente.dateReception %}{{ commandeVente.dateReception|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ commandeVente.selections }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('vente_show_commande', { 'id': commandeVente.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('vente_edit_commande', { 'id': commandeVente.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('vente_new_commande') }}">Create a new commandeVente</a>
+        </li>
+    </ul>
+{% endblock %}
