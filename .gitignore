@@ -15,5 +15,4 @@
 !var/SymfonyRequirements.php
 /vendor/
 .idea/
-.idea/*
-.idea/
+
