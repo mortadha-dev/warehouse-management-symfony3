@@ -25,7 +25,7 @@ class FournisseurController extends Controller
         public function createAction(Request $request)
 
     {
-        $fournisseur = new fournisseur();
+        $fournisseur = new Fournisseur();
         //prepare the form with the function: createForm()
         $form = $this->createForm(FournisseurType::class, $fournisseur);
         //extract the form answer from the received request

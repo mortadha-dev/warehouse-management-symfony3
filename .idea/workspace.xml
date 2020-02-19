@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/marww.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/marww.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,46 +67,45 @@
   </component>
   <component name="ProjectId" id="1XUUtnffrEB4UsvAqQwNbaZGWJn" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
-    <option name="showLibraryContents" value="true" />
-    <option name="sortByType" value="true" />
-  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Resources/views/frontend" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/GestionVenteBundle/Resources/views/Commande" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/GestionVenteBundle/Resources/views/Default" />
       <recent name="C:\wamp64\www\marww\app\Resources\views\frontend" />
       <recent name="C:\wamp64\www\marww\web\Bundles\ressources\front" />
       <recent name="C:\wamp64\www\marww\src\UserBundle\Resources\views\Default" />
       <recent name="C:\wamp64\www\marww\src\UserBundle\Security" />
+      <recent name="C:\wamp64\www\marww\app\Resources\FOSUserBundle" />
     </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="s generate:bundle" />
+      <command value="s debug:router" />
+      <command value="s doctrine:generate:entity" />
       <command value="s doctrine:generate:form" />
       <command value="s doctrine:generate:form fournisseur" />
       <command value="s doctrine:generate:form GestionAchatBundle:fournisseur" />
+      <command value="s doctrine:database:create" />
+      <command value="s doctrine:schema:update --force" />
       <command value="php bin/console fos:user:create testuser" />
       <command value="c dump-autoload" />
-      <command value="s debug:router" />
-      <command value="s doctrine:database:drop" />
-      <command value="s doctrine:database:create" />
-      <command value="s doctrine:generate:entity" />
-      <command value="s fos:user:promote dude" />
-      <command value="s doctrine:generate:crud" />
-      <command value="s doctrine:schema:update --force" />
-      <command value="s server:run" />
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
     </option>
   </component>
   <component name="SvnConfiguration">
@@ -125,47 +125,10 @@
       <workItem from="1581435669381" duration="15632000" />
       <workItem from="1581501422128" duration="3199000" />
       <workItem from="1581511459349" duration="13384000" />
-      <workItem from="1581939112097" duration="3000" />
-      <workItem from="1581974634581" duration="3398000" />
-      <workItem from="1582124455991" duration="101000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="466" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1581975582604">
-      <screen x="0" y="27" width="1366" height="741" />
-    </state>
-    <state x="466" y="154" width="424" height="484" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1581975582604" />
-    <state width="1070" height="52" key="GridCell.Tab.0.bottom" timestamp="1581894516505">
-      <screen x="0" y="27" width="1366" height="741" />
-    </state>
-    <state width="1070" height="52" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1581894516505" />
-    <state width="1070" height="52" key="GridCell.Tab.0.center" timestamp="1581894516505">
-      <screen x="0" y="27" width="1366" height="741" />
-    </state>
-    <state width="1070" height="52" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1581894516505" />
-    <state width="1070" height="52" key="GridCell.Tab.0.left" timestamp="1581894516505">
-      <screen x="0" y="27" width="1366" height="741" />
-    </state>
-    <state width="1070" height="52" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1581894516505" />
-    <state width="1070" height="52" key="GridCell.Tab.0.right" timestamp="1581894516505">
-      <screen x="0" y="27" width="1366" height="741" />
-    </state>
-    <state width="1070" height="52" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1581894516505" />
-    <state x="332" y="27" key="SettingsEditor" timestamp="1581616545106">
-      <screen x="0" y="27" width="1366" height="741" />
-    </state>
-    <state x="332" y="27" key="SettingsEditor/0.27.1366.741@0.27.1366.741" timestamp="1581616545106" />
-    <state x="367" y="280" key="com.intellij.ide.util.TipDialog" timestamp="1581974634589">
-      <screen x="0" y="27" width="1366" height="741" />
-    </state>
-    <state x="367" y="280" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1581974634589" />
-    <state x="347" y="175" width="672" height="677" key="run.anything.popup" timestamp="1581889559553">
-      <screen x="0" y="27" width="1366" height="741" />
-    </state>
-    <state x="347" y="175" width="672" height="677" key="run.anything.popup/0.27.1366.741@0.27.1366.741" timestamp="1581889559553" />
   </component>
 </project>
