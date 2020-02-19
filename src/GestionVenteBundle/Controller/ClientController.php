@@ -7,36 +7,22 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
 
-/**
- * Client controller.
- *
- * @Route("client")
- */
+
 class ClientController extends Controller
 {
-    /**
-     * Lists all client entities.
-     *
-     * @Route("/", name="client_index")
-     * @Method("GET")
-     */
+
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
         $clients = $em->getRepository('GestionVenteBundle:Client')->findAll();
 
-        return $this->render('client/index.html.twig', array(
+        return $this->render('@GestionVente/client/index.html.twig', array(
             'clients' => $clients,
         ));
     }
 
-    /**
-     * Creates a new client entity.
-     *
-     * @Route("/new", name="client_new")
-     * @Method({"GET", "POST"})
-     */
+
     public function newAction(Request $request)
     {
         $client = new Client();
@@ -51,34 +37,24 @@ class ClientController extends Controller
             return $this->redirectToRoute('client_show', array('id' => $client->getId()));
         }
 
-        return $this->render('client/new.html.twig', array(
+        return $this->render('@GestionVente/client/new.html.twig', array(
             'client' => $client,
             'form' => $form->createView(),
         ));
     }
 
-    /**
-     * Finds and displays a client entity.
-     *
-     * @Route("/{id}", name="client_show")
-     * @Method("GET")
-     */
+
     public function showAction(Client $client)
     {
         $deleteForm = $this->createDeleteForm($client);
 
-        return $this->render('client/show.html.twig', array(
+        return $this->render('@GestionVente/client/show.html.twig', array(
             'client' => $client,
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
-    /**
-     * Displays a form to edit an existing client entity.
-     *
-     * @Route("/{id}/edit", name="client_edit")
-     * @Method({"GET", "POST"})
-     */
+
     public function editAction(Request $request, Client $client)
     {
         $deleteForm = $this->createDeleteForm($client);
@@ -91,19 +67,13 @@ class ClientController extends Controller
             return $this->redirectToRoute('client_edit', array('id' => $client->getId()));
         }
 
-        return $this->render('client/edit.html.twig', array(
+        return $this->render('@GestionVente/client/edit.html.twig', array(
             'client' => $client,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
-    /**
-     * Deletes a client entity.
-     *
-     * @Route("/{id}", name="client_delete")
-     * @Method("DELETE")
-     */
     public function deleteAction(Request $request, Client $client)
     {
         $form = $this->createDeleteForm($client);

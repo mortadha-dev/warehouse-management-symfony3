@@ -17,7 +17,7 @@ class CommandeVenteController extends Controller
 
         $commandeVentes = $em->getRepository('GestionVenteBundle:CommandeVente')->findAll();
 
-        return $this->render('commandevente/index.html.twig', array(
+        return $this->render('@GestionVente/commandevente/index.html.twig', array(
             'commandeVentes' => $commandeVentes,
         ));
     }
@@ -36,7 +36,7 @@ class CommandeVenteController extends Controller
             return $this->redirectToRoute('vente_show_commande', array('id' => $commandeVente->getId()));
         }
 
-        return $this->render('commandevente/new.html.twig', array(
+        return $this->render('@GestionVente/commandevente/new.html.twig', array(
             'commandeVente' => $commandeVente,
             'form' => $form->createView(),
         ));
@@ -47,7 +47,7 @@ class CommandeVenteController extends Controller
     {
         $deleteForm = $this->createDeleteForm($commandeVente);
 
-        return $this->render('commandevente/show.html.twig', array(
+        return $this->render('@GestionVente/commandevente/show.html.twig', array(
             'commandeVente' => $commandeVente,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -65,7 +65,7 @@ class CommandeVenteController extends Controller
             return $this->redirectToRoute('vente_edit_commande', array('id' => $commandeVente->getId()));
         }
 
-        return $this->render('commandevente/edit.html.twig', array(
+        return $this->render("@GestionVente/commandevente/edit.html.twig", array(
             'commandeVente' => $commandeVente,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
