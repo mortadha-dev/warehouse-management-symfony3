@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c36f2d9e-5cf5-4251-b738-18fb32fa2766" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/GestionAchatBundle/Controller/ProduitController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GestionAchatBundle/Resources/views/Default/produit/produit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/backend/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/backend/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/frontend/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/frontend/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GestionAchatBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GestionAchatBundle/Resources/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GestionAchatBundle/Resources/views/Default/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/GestionAchatBundle/Resources/views/Default/create.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GestionAchatBundle/Resources/views/Default/read.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/GestionAchatBundle/Resources/views/Default/read.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +68,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/GestionAchatBundle/Resources/views/Default/produit" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../youtube" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
   </component>
@@ -144,7 +137,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
