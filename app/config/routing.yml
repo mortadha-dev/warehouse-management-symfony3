@@ -1,10 +1,12 @@
-gestion_vente:
-    resource: "@GestionVenteBundle/Resources/config/routing.yml"
-    prefix: /vente
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
 
-gestion_achat:
-    resource: "@GestionAchatBundle/Resources/config/routing.yml"
-    prefix:   /
+
+administration:
+    resource: "@GestionVenteBundle/Resources/config/routing.yml"
+    prefix: /administration/vente
+
 
 #app:
 #    resource: '@AppBundle/Controller/'
@@ -13,6 +15,3 @@ gestion_achat:
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
-user:
-    resource: "@UserBundle/Resources/config/routing.yml"
-    prefix:   /
