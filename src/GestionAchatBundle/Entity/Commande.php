@@ -21,6 +21,7 @@ class Commande
      */
     private $id;
 
+<<<<<<< HEAD
     /**
      * @var string
      *
@@ -49,6 +50,8 @@ class Commande
      */
     private $date;
 
+=======
+>>>>>>> b1862fa35044076ac9612431a5b79cee78f7ea67
 
     /**
      * Get id
@@ -59,6 +62,7 @@ class Commande
     {
         return $this->id;
     }
+<<<<<<< HEAD
 
     /**
      * Set libellecommande
@@ -155,5 +159,7 @@ class Commande
     {
         return $this->date;
     }
+=======
+>>>>>>> b1862fa35044076ac9612431a5b79cee78f7ea67
 }
 
