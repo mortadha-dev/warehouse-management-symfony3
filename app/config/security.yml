@@ -29,3 +29,4 @@ security:
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/vente/, role: ROLE_VENTE }
+        - { path: ^/rool/, role: ROLE_ADMIN }

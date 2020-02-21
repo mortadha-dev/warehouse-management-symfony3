@@ -52,7 +52,7 @@ class OrderController extends BaseController
 
                 } else {
                     $customer = \Stripe\Customer::retrieve($user->getStripeCustomerId());
-                    $customer->sources = $token;
+                    $customer->source = $token;
                     $customer->save();
                 }
 
