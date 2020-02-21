@@ -1,0 +1,44 @@
+{%  extends 'backend/base.html.twig' %}
+
+{% block content %}
+    <center><html>
+        <body>
+        <center>
+            <img src="{{ asset('backend/dist/img/livr.jpg') }}" width="500" height="333">
+            <h1>Liste des livraisons </h1>
+            <table border="1">
+                <tr>
+                    <td>id livraison</td>
+                    <td>ville</td>
+                    <td>pays</td>
+                    <td>adresse</td>
+                    <td>date de livraison</td>
+                    <td>heure de livraison</td>
+                    <td>etat de livraison</td>
+                    <td>commande concernée</td>
+                    <td>clien concernée</td>
+                    <td>livreure</td>
+                    <td>Supprission</td>
+                    <td>Modification</td>
+                </tr>
+                {% for livraison in livraisons %}
+                    <tr>
+                        <td>{{ livraison.id }}</td>
+                        <td>{{ livraison.ville }}</td>
+                        <td>{{ livraison.pays }}</td>
+                        <td>{{ livraison.adresse }}</td>
+                        <td>{{ livraison.dateliv | date ("m-d-y") }}</td>
+                        <td>{{ livraison.heurliv }}</td>
+                        <td>{{ livraison.etat }}</td>
+                        <td>{{ livraison.commande }}</td>
+                        <td>{{ livraison.client }}</td>
+                        <td>{{ livraison.livreure }}</td>
+                        <td> <a href="{{ path('deleteliv',{'id':livraison.id}) }}">supprimer</a></td>
+                        <td> <a href="{{ path('updateliv',{'id':livraison.id}) }}">Modifier</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </center>
+        </body>
+        </html></center><br><br>
+{% endblock %}

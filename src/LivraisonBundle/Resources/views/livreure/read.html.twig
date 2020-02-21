@@ -1,0 +1,32 @@
+{%  extends 'backend/base.html.twig' %}
+
+{% block content %}
+    <center><html>
+        <body>
+        <center>
+            <img src="{{ asset('backend/dist/img/liv2.jpg') }}" width="500" height="333">
+            <h1>Liste des livreurs </h1>
+            <table border="1">
+                <tr>
+                    <td>id livreure</td>
+                    <td>nom livreure</td>
+                    <td>adresse</td>
+                    <td>telephone</td>
+                    <td>modification</td>
+                    <td>supprission</td>
+                </tr>
+                {% for livreure in livreures %}
+                    <tr>
+                        <td>{{ livreure.id }}</td>
+                        <td>{{ livreure.nomliv }}</td>
+                        <td>{{ livreure.adresseliv }}</td>
+                        <td>{{ livreure.numtel }}</td>
+                        <td> <a href="{{ path('update',{'id':livreure.id}) }}">Modifier</a></td>
+                        <td> <a href="{{ path('delete',{'id':livreure.id}) }}">supprimer</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </center>
+        </body>
+        </html></center><br><br>
+{% endblock %}
