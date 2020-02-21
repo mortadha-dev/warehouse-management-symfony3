@@ -1,3 +1,4 @@
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
@@ -6,6 +7,10 @@ app:
 administration:
     resource: "@GestionVenteBundle/Resources/config/routing.yml"
     prefix: /administration/vente
+
+tool:
+    resource: "@ToolBundle/Resources/config/routing.yml"
+    prefix:   /tool
 
 
 #app:

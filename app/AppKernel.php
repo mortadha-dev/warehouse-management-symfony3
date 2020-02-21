@@ -21,6 +21,8 @@ class AppKernel extends Kernel
             new UserBundle\UserBundle(),
             new GestionAchatBundle\GestionAchatBundle(),
             new GestionVenteBundle\GestionVenteBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+            new ToolBundle\ToolBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

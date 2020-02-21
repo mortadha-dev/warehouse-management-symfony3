@@ -1,0 +1,20 @@
+serialize_product:
+    path:     /serialize/product/{id}
+    defaults: { _controller: ToolBundle:Serialization:serializeProduct }
+
+serialize_client:
+    path:     /serialize/client/{id}
+    defaults: { _controller: ToolBundle:Serialization:serializeClient }
+
+deserialize_product:
+    path:     /deserialize/product/
+    defaults: { _controller: ToolBundle:Serialization:deserializeProduct }
+
+deserialize_client:
+    path:     /deserialize/client
+    defaults: { _controller: ToolBundle:Serialization:deserializeClient }
+
+dump_file:
+    path: /dump/{file}/{content}
+    defaults: { _controller: ToolBundle:FileSys:dumpFile }
+
