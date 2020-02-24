@@ -21,4 +21,17 @@ class DefaultController extends BaseController
             'products' => $products,
         ));
     }
+
+    /**
+     * @Route("/administration", name="administration")
+     */
+    public function administrationAction()
+    {
+        $user = $this->getUser();
+        //dump($user->getRoles());
+        if ($user->hasRole("ROLE_VENTE")){
+            return $this->redirectToRoute("vente_homepage");
+        }
+        return $this->redirectToRoute("homepage");
+    }
 }

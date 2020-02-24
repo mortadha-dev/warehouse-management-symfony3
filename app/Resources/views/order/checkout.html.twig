@@ -14,6 +14,8 @@
                         <tr>
                             <th class="col-xs-6 active">Product</th>
                             <th class="col-xs-3 active text-center">Price</th>
+                            <th class="col-xs-3 active text-center">Quantity</th>
+                            <th class="col-xs-3 active text-center">Sum</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -21,12 +23,15 @@
                             <tr>
                                 <th class="col-xs-6 checkout-product-name">{{ product.name }}</th>
                                 <td class="col-xs-3">${{ product.price }}</td>
+                                <td class="col-xs-3">$quant</td>
+                                <td class="col-xs-3">$sum</td>
                             </tr>
                         {% endfor %}
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th class="col-xs-6 info">Total</th>
+                            <th class="col-xs-6 info" colspan="3">Total</th>
+
                             <td class="col-xs-3 info checkout-total">${{ cart.total }}</td>
                         </tr>
                     </tfoot>
