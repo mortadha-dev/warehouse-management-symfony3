@@ -3,34 +3,36 @@
 {% block content %}
     <h1>Commandeventes list</h1>
 
-    <table>
-        <thead>
+    <table class="table table-striped table-sm">
+        <thead class="thead-dark" >
             <tr>
-                <th>Id</th>
-                <th>Idclient</th>
-                <th>Idlivraison</th>
-                <th>Dateenvoie</th>
-                <th>Datereception</th>
-                <th>Selections</th>
-                <th>Actions</th>
+                <th scope="col">Id</th>
+                <th scope="col">Idclient</th>
+                <th scope="col">Idlivraison</th>
+                <th scope="col">Dateenvoie</th>
+                <th scope="col">Datereception</th>
+                <th scope="col">Selections</th>
+                <th scope="col">Livrée</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for commandeVente in commandeVentes %}
             <tr>
-                <td><a href="{{ path('vente_show_commande', { 'id': commandeVente.id }) }}">{{ commandeVente.id }}</a></td>
+                <td scope="row"><a href="{{ path('vente_show_commande', { 'id': commandeVente.id }) }}">{{ commandeVente.id }}</a></td>
                 <td>{{ commandeVente.idClient }}</td>
                 <td>{{ commandeVente.idLivraison }}</td>
                 <td>{% if commandeVente.dateEnvoie %}{{ commandeVente.dateEnvoie|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if commandeVente.dateReception %}{{ commandeVente.dateReception|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ commandeVente.selections }}</td>
+                <td >{% if commandeVente.livree  %}<ion-icon name="checkmark-outline" size="large"></ion-icon><{% else %} <ion-icon name="close-outline" size="large"></ion-icon> {% endif %}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('vente_show_commande', { 'id': commandeVente.id }) }}">show</a>
+                            <a href="{{ path('vente_show_commande', { 'id': commandeVente.id }) }}"><button type="button" class="btn btn-primary">Show</button></a>
                         </li>
                         <li>
-                            <a href="{{ path('vente_edit_commande', { 'id': commandeVente.id }) }}">edit</a>
+                            <a href="{{ path('vente_edit_commande', { 'id': commandeVente.id }) }}"><button type="button" class="btn btn-secondary">Edit</button></a>
                         </li>
                     </ul>
                 </td>
@@ -41,7 +43,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('vente_new_commande') }}">Create a new commandeVente</a>
+            <a href="{{ path('vente_new_commande') }}"><button type="button" class="btn btn-success">Create</button></a>
         </li>
     </ul>
 {% endblock %}

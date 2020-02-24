@@ -25,6 +25,10 @@ class CommandeVenteController extends Controller
     public function newAction(Request $request)
     {
         $commandeVente = new Commandevente();
+        $date = new \DateTime("now");
+        $commandeVente->setDateEnvoie($date);
+        $commandeVente->setDateReception($date);
+        dump($commandeVente);
         $form = $this->createForm('GestionVenteBundle\Form\CommandeVenteType', $commandeVente);
         $form->handleRequest($request);
 

@@ -6,6 +6,7 @@ use GestionVenteBundle\Entity\Client;
 use GestionVenteBundle\Repository\ClientRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -20,6 +21,7 @@ class CommandeVenteType extends AbstractType
             'class' => Client::class,
             'choice_label' => 'id'
         ])
+                ->add("livree", CheckboxType::class)
                 ->add('idLivraison')
                 ->add('dateEnvoie')
                 ->add('dateReception')

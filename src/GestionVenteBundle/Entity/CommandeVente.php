@@ -29,6 +29,13 @@ class CommandeVente
     private $idClient;
 
     /**
+     * @var boolean
+     * @ORM\Column(name="livree", type="boolean")
+     */
+    private $livree = false;
+
+
+    /**
      * @var int
      *
      * @ORM\Column(name="idLivraison", type="integer", nullable=false)
@@ -186,5 +193,22 @@ class CommandeVente
     {
         return $this->selections;
     }
+
+    /**
+     * @return boolean
+     */
+    public function getLivree()
+    {
+        return $this->livree;
+    }
+
+    /**
+     * @param boolean
+     */
+    public function setLivree($livree)
+    {
+        $this->livree = $livree;
+    }
+
 }
 
