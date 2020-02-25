@@ -30,9 +30,6 @@ class OrderController extends BaseController
      */
     public function checkoutAction(Request $request)
     {
-        if ($request->isMethod('POST')) {
-            $token = $request->request->get("stripeToken");
-
             if ($request->isMethod('POST')) {
                 $token = $request->request->get('stripeToken');
                 \Stripe\Stripe::setApiKey($this->getParameter("stripe_secret_key"));
@@ -70,7 +67,6 @@ class OrderController extends BaseController
 
 
 
-        }
         $products = $this->get('shopping_cart')->getProducts();
         return $this->render('order/checkout.html.twig', array(
             'products' => $products,

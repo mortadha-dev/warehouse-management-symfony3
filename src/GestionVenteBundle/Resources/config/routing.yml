@@ -24,6 +24,10 @@ vente_new_commande:
     path:   /commande/new
     defaults:   { _controller: GestionVenteBundle:CommandeVente:new }
 
+vente_save_commande:
+    path: /commande/save
+    defaults: { _controller: GestionVenteBundle:CommandeVente:saveCommande }
+
 ##############CLIENT
 client_new:
     path:   /client/new

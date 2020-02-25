@@ -5,7 +5,9 @@ namespace GestionVenteBundle\Controller;
 use GestionVenteBundle\Entity\CommandeVente;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\BrowserKit\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 
 class CommandeVenteController extends Controller
@@ -104,5 +106,11 @@ class CommandeVenteController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+
+    public function saveCommandeAction(Request $request)
+    {
+        $products = $request->request->get("products");
+        return new Response($products);
     }
 }

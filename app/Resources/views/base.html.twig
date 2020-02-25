@@ -82,6 +82,12 @@
             crossorigin="anonymous"></script>
 
     <script src="{{ asset('js/sweetalert/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-input-spinner.js') }}"></script>
+    <script>
+        $("input[type='number']").inputSpinner()
+    </script>
+    {% block custom_scripts %}
+    {% endblock %}
 {% endblock %}
 </body>
 </html>
