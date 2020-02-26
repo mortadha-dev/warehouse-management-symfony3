@@ -38,23 +38,17 @@
                 </td>
                 <td >{% if commandeVente.livree  %}<ion-icon name="checkmark-outline" size="large"></ion-icon><{% else %} <ion-icon name="close-outline" size="large"></ion-icon> {% endif %}</td>
                 <td>
-                    <ul>
-                        <li>
+
                             <a href="{{ path('vente_show_commande', { 'id': commandeVente.id }) }}"><button type="button" class="btn btn-primary">Show</button></a>
-                        </li>
-                        <li>
+
                             <a href="{{ path('vente_edit_commande', { 'id': commandeVente.id }) }}"><button type="button" class="btn btn-secondary">Edit</button></a>
-                        </li>
-                    </ul>
+
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
             <a href="{{ path('vente_new_commande') }}"><button type="button" class="btn btn-success">Create</button></a>
-        </li>
-    </ul>
+
 {% endblock %}
