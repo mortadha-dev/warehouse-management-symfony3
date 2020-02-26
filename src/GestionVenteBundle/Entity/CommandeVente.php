@@ -38,7 +38,7 @@ class CommandeVente
     /**
      * @var int
      *
-     * @ORM\Column(name="idLivraison", type="integer", nullable=false)
+     * @ORM\Column(name="idLivraison", type="integer", nullable=true)
      */
     private $idLivraison;
 

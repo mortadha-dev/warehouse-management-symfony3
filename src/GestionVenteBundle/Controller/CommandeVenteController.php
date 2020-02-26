@@ -2,15 +2,16 @@
 
 namespace GestionVenteBundle\Controller;
 
+use AppBundle\Controller\BaseController;
 use GestionVenteBundle\Entity\CommandeVente;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\BrowserKit\Response;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 
-class CommandeVenteController extends Controller
+class CommandeVenteController extends BaseController
 {
 
     public function indexAction()
@@ -111,6 +112,18 @@ class CommandeVenteController extends Controller
     public function saveCommandeAction(Request $request)
     {
         $products = $request->request->get("products");
-        return new Response($products);
+        $commande = new CommandeVente();
+        $commande->setIdClient($this->getUser()->getId());
+        $commande->setSelections($products);
+        // shoppingCart data
+        $dec = json_decode($products,true);
+        $this->get("shopping_cart")->setAssociation($dec);
+        $this->get("shopping_cart")->setTotal(1);
+        $em = $this->getDoctrine()->getManager();
+        //$em->persist($commande);
+        //$em->flush();
+
+        //$dec = json_decode($products);
+        return new Response($this->get("shopping_cart")->getTotal());
     }
 }

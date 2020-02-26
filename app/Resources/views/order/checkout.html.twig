@@ -37,11 +37,12 @@
                     </tfoot>
                 </table>
             </div>
-
+            <div class="col-xs-12 col-sm-6">
+                {{ include('order/_cardForm.html.twig') }}
+            </div>
             <div class="col-xs-12 col-sm-6">
                 <!-- add checkout form here -->
                 <div class="col-xs-12 col-sm-6">
-                    <form action="" method="POST">
                         <script>
                             var amount = 0;
                             function calculateAmount() {
@@ -76,22 +77,12 @@
                                     let quant = $(this).children("#quantity").first().find("input").val();
                                     son[id] = quant;
                                 });
-                                $.post("{{ path('vente_save_commande') }}", {"products":son }, function(result){
+                                $.post("{{ path('vente_save_commande') }}", {"products":JSON.stringify(son)}, function(result){
                                     console.log(result);
                                 });
                             }
+                        </script>
 
-                        </script>
-                        <script
-                                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                                data-key="{{ public_key }}"
-                                data-amount=""+amount
-                                data-name="Dollar Shear Club"
-                                data-description="Widget"
-                                data-image="{{ asset('backend/dist/img/avatar.png') }}"
-                                data-locale="auto">
-                        </script>
-                    </form>
                 </div>
             </div>
         </div>
@@ -101,6 +92,41 @@
 {% block custom_scripts %}
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     <script type="text/javascript">
-        Stripe.setPublishableKey('{{  }}');
+        Stripe.setPublishableKey('{{ public_key }}');
+        $(function () {
+            var $form = $('.js-checkout-form');
+            $form.submit(function (event) {
+                event.preventDefault();
+                // Disable the submit button to prevent repeated clicks:
+                $form.find('.js-submit-button').prop('disabled', true);
+                // Request a token from Stripe:
+                Stripe.card.createToken($form, stripeResponseHandler);
+                // Prevent the form from being submitted:
+                return false;
+            });
+        });
+
+        function stripeResponseHandler(status, response) {
+        // Grab the form:
+            var $form = $('.js-checkout-form');
+        if (response.error) { // Problem!
+            // Show the errors on the form:
+            $form.find('.js-checkout-error')
+                .text(response.error.message)
+                .removeClass('hidden');
+            $form.find('.js-submit-button').prop('disabled', false); // Re-enable submission
+        } else { // Token was created!
+            $form.find('.js-checkout-error')
+                .addClass('hidden');
+            // Get the token ID:
+            var token = response.id;
+            // Insert the token ID into the form so it gets submitted to the server:
+            $form.append($('<input type="hidden" name="stripeToken">').val(token));
+            //create 'commande'
+            save();
+            // Submit the form:
+            $form.get(0).submit();
+        }
+        }
     </script>
 {% endblock %}

@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class OrderController extends BaseController
 {
@@ -54,15 +55,17 @@ class OrderController extends BaseController
                 }
 
                 \Stripe\Charge::create(array(
-                    "amount" => $this->get('shopping_cart')->getTotal() * 100,
+                    "amount" =>  $this->get('shopping_cart')-> getTotal() *100,
                     "currency" => "usd",
                     "customer" => $customer,
                     "description" => "First test charge!"
                 ));
                 // Empty cart after successful charge
                 $this->get('shopping_cart')->emptyCart();
+                $this->get('shopping_cart')->emptyTotal();
                 $this->addFlash('success', 'Order Complete! Yay!');
                 return $this->redirectToRoute('homepage');
+                //return new Response(var_dump($this->get("shopping_cart")->getTotal()));
             }
 
 

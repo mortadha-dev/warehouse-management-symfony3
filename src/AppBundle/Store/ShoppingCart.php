@@ -11,10 +11,11 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 class ShoppingCart
 {
     const CART_PRODUCTS_KEY = '_shopping_cart.products';
-
+    const CART_PRODUCTS_TOTAL = 'shopping_cart.total';
     private $session;
     private $em;
 
+    private $association;
     private $products;
 
     public function __construct(SessionInterface $session, EntityManagerInterface $em)
@@ -58,14 +59,32 @@ class ShoppingCart
         return $this->products;
     }
 
+    /**
+     * @return int
+     */
     public function getTotal()
     {
-        $total = 0;
-        foreach ($this->getProducts() as $product) {
-            $total += $product->getPrice();
-        }
+        //foreach ($this->getProducts() as $product) {
+            //$product->getPrice() * intval($this->association[(string)$product->getId()])
+            //$total += $product->getPrice() ;
+        //}
 
-        return $total;
+
+        return $this->session->get(self::CART_PRODUCTS_TOTAL);
+    }
+
+    public function emptyTotal()
+    {
+        $this->session->set(self::CART_PRODUCTS_TOTAL,0);
+    }
+
+    public function setTotal($t)
+    {
+        $total=0;
+        foreach ($this->getProducts() as $product) {
+            $total += $product->getPrice() * intval($this->association[$product->getId()]);
+        }
+        $this->session->set(self::CART_PRODUCTS_TOTAL, $total);
     }
 
     public function emptyCart()
@@ -86,4 +105,22 @@ class ShoppingCart
 
         $this->session->set(self::CART_PRODUCTS_KEY, $ids);
     }
+
+    /**
+     * @return mixed
+     */
+    public function getAssociation()
+    {
+        return $this->association;
+    }
+
+    /**
+     * @param mixed $association
+     */
+    public function setAssociation($association)
+    {
+        $this->association = $association;
+    }
+
+
 }
