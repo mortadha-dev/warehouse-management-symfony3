@@ -17,3 +17,8 @@ gestion_achat_fournisseur_delete:
     path:     /delete/{id}
     defaults: { _controller: GestionAchatBundle:Fournisseur:delete }
 
+gestion_achat_produit:
+    path:     /createproduit
+    defaults: { _controller: GestionAchatBundle:Produit:create }
+
+

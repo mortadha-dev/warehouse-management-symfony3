@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c36f2d9e-5cf5-4251-b738-18fb32fa2766" name="Default Changelist" comment="">
+<<<<<<< HEAD
+=======
       <change afterPath="$PROJECT_DIR$/src/GestionAchatBundle/Controller/ProduitController.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/GestionAchatBundle/Resources/views/Default/produit/produit.html.twig" afterDir="false" />
+>>>>>>> b1862fa35044076ac9612431a5b79cee78f7ea67
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,6 +20,9 @@
     <execution>
       <phar pharPath="$PROJECT_DIR$/composer.phar" interpreterId="f079f75d-f211-48c6-ac62-77a6bf8b4489" />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3.5">
     <include_path>
@@ -65,18 +71,19 @@
   <component name="ProjectId" id="1XUUtnffrEB4UsvAqQwNbaZGWJn" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Resources/views/frontend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../youtube" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\marww\src\GestionAchatBundle\Resources\views\Default\produit" />
+      <recent name="C:\wamp64\www\marww\src\GestionAchatBundle\Controller" />
       <recent name="C:\wamp64\www\marww\app\Resources\views\frontend" />
       <recent name="C:\wamp64\www\marww\web\Bundles\ressources\front" />
       <recent name="C:\wamp64\www\marww\src\UserBundle\Resources\views\Default" />
-      <recent name="C:\wamp64\www\marww\src\UserBundle\Security" />
-      <recent name="C:\wamp64\www\marww\app\Resources\FOSUserBundle" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -88,9 +95,11 @@
       <command value="s doctrine:generate:form fournisseur" />
       <command value="s doctrine:generate:form GestionAchatBundle:fournisseur" />
       <command value="s doctrine:database:create" />
-      <command value="s doctrine:schema:update --force" />
       <command value="php bin/console fos:user:create testuser" />
       <command value="c dump-autoload" />
+      <command value="s doctrine:generate:form GestionAchatBundle:Produit" />
+      <command value="s doctrine:generate:entity " />
+      <command value="s doctrine:schema:update --force" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -127,5 +136,18 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -21,6 +21,37 @@ class Commande
      */
     private $id;
 
+<<<<<<< HEAD
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="libellecommande", type="string", length=255)
+     */
+    private $libellecommande;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descriptioncommande", type="string", length=255)
+     */
+    private $descriptioncommande;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="quantitecommande", type="integer")
+     */
+    private $quantitecommande;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="date")
+     */
+    private $date;
+
+=======
+>>>>>>> b1862fa35044076ac9612431a5b79cee78f7ea67
 
     /**
      * Get id
@@ -31,5 +62,104 @@ class Commande
     {
         return $this->id;
     }
+<<<<<<< HEAD
+
+    /**
+     * Set libellecommande
+     *
+     * @param string $libellecommande
+     *
+     * @return Commande
+     */
+    public function setLibellecommande($libellecommande)
+    {
+        $this->libellecommande = $libellecommande;
+
+        return $this;
+    }
+
+    /**
+     * Get libellecommande
+     *
+     * @return string
+     */
+    public function getLibellecommande()
+    {
+        return $this->libellecommande;
+    }
+
+    /**
+     * Set descriptioncommande
+     *
+     * @param string $descriptioncommande
+     *
+     * @return Commande
+     */
+    public function setDescriptioncommande($descriptioncommande)
+    {
+        $this->descriptioncommande = $descriptioncommande;
+
+        return $this;
+    }
+
+    /**
+     * Get descriptioncommande
+     *
+     * @return string
+     */
+    public function getDescriptioncommande()
+    {
+        return $this->descriptioncommande;
+    }
+
+    /**
+     * Set quantitecommande
+     *
+     * @param integer $quantitecommande
+     *
+     * @return Commande
+     */
+    public function setQuantitecommande($quantitecommande)
+    {
+        $this->quantitecommande = $quantitecommande;
+
+        return $this;
+    }
+
+    /**
+     * Get quantitecommande
+     *
+     * @return int
+     */
+    public function getQuantitecommande()
+    {
+        return $this->quantitecommande;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Commande
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+=======
+>>>>>>> b1862fa35044076ac9612431a5b79cee78f7ea67
 }
 
