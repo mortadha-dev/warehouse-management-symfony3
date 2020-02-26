@@ -32,19 +32,19 @@
     <div class="container">
         {#<img src="{{ asset('backend/test.jpeg') }}" alt="AdminLTE Logo" class="icon-fluid icon-thumbnail"
              style="opacity: .8">#}
-        <a class="navbar-brand" href="index.html">Debou</a>
+        <a class="navbar-brand" href="{{ path('homepage') }}">Debou</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
         </button>
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a href="accueil" class="nav-link">Accueil</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Vente</a></li>
+                {% block nav_acceuil %}<li class="nav-item active"><a href="{{ path('homepage') }}" class="nav-link">Accueil</a></li>{% endblock %}
+                {% block nav_vente %}<li class="nav-item"><a href="{{ path('vente_page') }}" class="nav-link">Vente</a></li>{% endblock  %}
                 <li class="nav-item"><a href="#" class="nav-link">Livraison</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Services aprés vente</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">A propos</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Nous contacter</a></li>
+                <li class="nav-item"><a href="{{ path('administration') }}" class="nav-link">Administration</a></li>
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                     <li class="nav-item"><a href="#" class="nav-link"></a></li>
                     <li class="nav-item"><a href="#" class="nav-link"></a></li>
@@ -55,8 +55,8 @@
                         </a></a>
                     </li>
                 {% else %}
-                    <li class="nav-item"><a href="register" class="nav-link">S'inscrire</a></li>
-                    <li class="nav-item"><a href="login" class="nav-link">S'authentifier</a></li>
+                    <li class="nav-item"><a href="{{ path('fos_user_registration_register') }}" class="nav-link">S'inscrire</a></li>
+                    <li class="nav-item"><a href="{{ path('fos_user_security_login') }}" class="nav-link">S'authentifier</a></li>
                     <li class="nav-item"><a href="#" class="nav-link"></a></li>
                     <li class="nav-item"><a href="#" class="nav-link"></a></li>
                 {% endif %}
@@ -68,9 +68,14 @@
 </nav>
 <!-- END nav -->
 
+{% block container %}
 <div class="hero-wrap" style="background-image: url({{ asset('Bundles/ressources/front/images/bg_2.jpg') }});" data-stellar-background-ratio="0.5">
+
+    {% block overlays %}
     <div class="overlay"></div>
     <div class="overlay-2"></div>
+    {% endblock overlays %}
+
     <div class="container">
         <div class="row no-gutters slider-text justify-content-center align-items-center">
             <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-end">
@@ -81,14 +86,15 @@
             </div>
         </div>
     </div>
+
     <div class="mouse">
         <a href="#" class="mouse-icon">
             <div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
         </a>
     </div>
 </div>
-
-
+{% endblock container %}
+{% block sections %}
 <section class="ftco-section ftco-no-pb">
     <div class="container">
         <div class="row">
@@ -783,7 +789,9 @@
         </div>
     </div>
 </section>
-{%  block content %}{% endblock %}
+{% endblock sections%}
+
+{% block footer %}
 <footer class="ftco-footer ftco-section">
     <div class="container">
         <div class="row mb-5">
@@ -853,7 +861,7 @@
         </div>
     </div>
 </footer>
-
+{% endblock footer %}
 
 
 <!-- loader -->
@@ -877,6 +885,6 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 <script src="{{ asset('Bundles/ressources/front/js/google-map.js') }}"></script>
 <script src="{{ asset('Bundles/ressources/front/js/main.js') }}"></script>
-
+{% block custom_scripts %}{% endblock %}
 </body>
 </html>

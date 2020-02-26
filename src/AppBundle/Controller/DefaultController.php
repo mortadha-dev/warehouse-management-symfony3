@@ -13,13 +13,14 @@ class DefaultController extends BaseController
      */
         public function homepageAction(Request $request)
     {
-        $products = $this->getDoctrine()
-            ->getRepository('AppBundle:Product')
-            ->findAll();
-
-        return $this->render('default/homepage.html.twig', array(
-            'products' => $products,
-        ));
+        //$products = $this->getDoctrine()
+        //            ->getRepository('AppBundle:Product')
+        //            ->findAll();
+        //
+        //        return $this->render('default/homepage.html.twig', array(
+        //            'products' => $products,
+        //        ));
+        return $this->render(':frontend:base.html.twig');
     }
 
     /**
@@ -34,4 +35,6 @@ class DefaultController extends BaseController
         }
         return $this->redirectToRoute("homepage");
     }
+
+
 }

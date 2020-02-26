@@ -81,8 +81,8 @@ fos_user:
     service:
         mailer: fos_user.mailer.twig_swift
     from_email:
-        address: bouallagumortadha@gmail.com
-        sender_name: Morta
+        address: dude@d.com
+        sender_name: dude
 
 sensio_framework_extra:
     router:

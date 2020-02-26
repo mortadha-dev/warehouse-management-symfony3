@@ -1,6 +1,6 @@
 vente_homepage:
     path:     /
-    defaults: { _controller: GestionVenteBundle:Default:home }
+    defaults: { _controller: GestionVenteBundle:Default:backHome }
 
 #############COMMANDE
 

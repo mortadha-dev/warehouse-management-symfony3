@@ -1,32 +1,24 @@
-{% extends 'frontend/base.html.twig' %}
+{% extends 'base.html.twig' %}
 {% block title %}SSC Checkout{% endblock %}
 
-
-{% block container %}{% endblock %}
-
-{% block sections %}
-<section class="ftco-section ftco-no-pb">
+{% block body %}
+<div class="nav-space-checkout">
     <div class="container">
         <div class="row">
-    <div class="nav-space-checkout">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h1 class="checkout-header">Checkout</h1>
-                </div>
+            <div class="col-xs-12">
+                <h1 class="checkout-header">Checkout</h1>
             </div>
-                <div class="row">
-                <div class="col-xs-18 col-sm-7">
-                    <table class="table table-bordered">
-                        <thead>
+            <div class="col-xs-18 col-sm-7">
+                <table class="table table-bordered">
+                    <thead>
                         <tr>
                             <th class="col-xs-6 active">Product</th>
                             <th class="col-xs-3 active text-center">Price</th>
                             <th class="col-xs-6 active text-center">Quantity</th>
                             <th class="col-xs-3 active text-center">Sum</th>
                         </tr>
-                        </thead>
-                        <tbody>
+                    </thead>
+                    <tbody>
                         {% for product in products %}
                             <tr class="product">
                                 <th id="header" data="{{ product.id }}" class="col-xs-6 checkout-product-name">{{ product.name }}</th>
@@ -35,35 +27,35 @@
                                 <td id="sum" class="col-xs-3">$sum</td>
                             </tr>
                         {% endfor %}
-                        </tbody>
-                        <tfoot>
+                    </tbody>
+                    <tfoot>
                         <tr>
                             <th class="col-xs-15 info" colspan="3">Total</th>
 
                             <td id="checkout-total" class="col-xs-3 info checkout-total">${{ cart.total }}</td>
                         </tr>
-                        </tfoot>
-                    </table>
-                </div>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                {{ include('order/_cardForm.html.twig') }}
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <!-- add checkout form here -->
                 <div class="col-xs-12 col-sm-6">
-                    {{ include('order/_cardForm.html.twig') }}
-                </div>
-                <div class="col-xs-12 col-sm-6">
-                    <!-- add checkout form here -->
-                    <div class="col-xs-12 col-sm-6">
                         <script>
                             var amount = 0;
                             function calculateAmount() {
                                 let total = 0;
                                 $(".product").each(function (index) {
                                     let sum = 0;
-                                    let price = $(this).children("#price").first().attr("data");
-                                    let quant = $(this).children("#quantity").first().find("input").val();
-                                    console.log(price+"=>"+quant);
-                                    sum=price*quant;
-                                    total+=sum;
-                                    console.log(sum);
-                                    $(this).children("#sum").first().text("$"+sum);
+                                   let price = $(this).children("#price").first().attr("data");
+                                   let quant = $(this).children("#quantity").first().find("input").val();
+                                   console.log(price+"=>"+quant);
+                                   sum=price*quant;
+                                   total+=sum;
+                                   console.log(sum);
+                                   $(this).children("#sum").first().text("$"+sum);
                                 });
                                 console.log("total=>"+total);
                                 amount = total;
@@ -91,16 +83,12 @@
                             }
                         </script>
 
-                    </div>
                 </div>
             </div>
         </div>
     </div>
-        </div></div></section>
+</div>
 {% endblock %}
-
-
-
 {% block custom_scripts %}
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     <script type="text/javascript">

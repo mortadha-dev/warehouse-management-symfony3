@@ -1,12 +1,18 @@
 
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
 
 
-administration:
-    resource: "@GestionVenteBundle/Resources/config/routing.yml"
-    prefix: /administration/vente
+vente_front:
+    resource: "@GestionVenteBundle/Resources/config/routing-front.yml"
+    prefix: /vente
+
+vente_back:
+    resource: "@GestionVenteBundle/Resources/config/routing-back.yml"
+    prefix: /admin/vente
+
 
 tool:
     resource: "@ToolBundle/Resources/config/routing.yml"
