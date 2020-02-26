@@ -46,3 +46,11 @@ services:
         arguments: ['@service_container']
         tags:
             - {name: 'twig.extension'}
+
+    twig.extension:
+        # Register the class (The namespace must match)
+        class: GestionVenteBundle\Twig\Extension\TwigExtensions
+        # Inject doctrine as first parameter
+        arguments: [ '@doctrine']
+        tags:
+            - { name: 'twig.extension' }

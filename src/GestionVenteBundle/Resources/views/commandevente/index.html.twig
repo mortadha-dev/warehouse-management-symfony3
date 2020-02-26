@@ -25,11 +25,14 @@
                 <td>{% if commandeVente.dateEnvoie %}{{ commandeVente.dateEnvoie|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if commandeVente.dateReception %}{{ commandeVente.dateReception|date('Y-m-d H:i:s') }}{% endif %}</td>
                 {% set ar = commandeVente.selections | json_decode() %}
-                {{ dump(ar) }}
+                {#dump(ar)#}
                 <td>
                     <ul>
                         {% for key,val in ar %}
-                        <li> {{ key }}=>{{ val }}</li>
+                            {% set prod =  key |find() %}
+                            {#dump(key)#}
+                            {#dump(prod) #}
+                            <li> {{ prod.name }} => {{ val }}</li>
                         {% endfor %}
                     </ul>
                 </td>
