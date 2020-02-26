@@ -114,14 +114,14 @@ class CommandeVenteController extends BaseController
         $products = $request->request->get("products");
         $commande = new CommandeVente();
         $commande->setIdClient($this->getUser()->getId());
-        $commande->setSelections($products);
         // shoppingCart data
         $dec = json_decode($products,true);
+        $commande->setSelections($dec);
         $this->get("shopping_cart")->setAssociation($dec);
         $this->get("shopping_cart")->setTotal(1);
         $em = $this->getDoctrine()->getManager();
-        //$em->persist($commande);
-        //$em->flush();
+        $em->persist($commande);
+        $em->flush();
 
         //$dec = json_decode($products);
         return new Response($this->get("shopping_cart")->getTotal());

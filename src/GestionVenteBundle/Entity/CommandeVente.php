@@ -191,7 +191,7 @@ class CommandeVente
      */
     public function getSelections()
     {
-        return $this->selections;
+        return json_encode($this->selections);
     }
 
     /**

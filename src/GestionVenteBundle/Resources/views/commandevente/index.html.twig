@@ -24,7 +24,15 @@
                 <td>{{ commandeVente.idLivraison }}</td>
                 <td>{% if commandeVente.dateEnvoie %}{{ commandeVente.dateEnvoie|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if commandeVente.dateReception %}{{ commandeVente.dateReception|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ commandeVente.selections }}</td>
+                {% set ar = commandeVente.selections | json_decode() %}
+                {{ dump(ar) }}
+                <td>
+                    <ul>
+                        {% for key,val in ar %}
+                        <li> {{ key }}=>{{ val }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
                 <td >{% if commandeVente.livree  %}<ion-icon name="checkmark-outline" size="large"></ion-icon><{% else %} <ion-icon name="close-outline" size="large"></ion-icon> {% endif %}</td>
                 <td>
                     <ul>

@@ -41,3 +41,8 @@ services:
         class: AppBundle\Store\ShoppingCart
         autowire: true
 
+    gestionvente.twig.extension.association_extension:
+        class: GestionVenteBundle\Twig\Extension\AssociationExtension
+        arguments: ['@service_container']
+        tags:
+            - {name: 'twig.extension'}
