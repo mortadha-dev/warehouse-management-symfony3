@@ -8,7 +8,7 @@ use LivraisonBundle\Form\UpdateLivraisonType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-
+use Endroid\QrCode\QrCode;
 class LivraisonController extends Controller
 {
     public function indexAction()
@@ -49,6 +49,7 @@ class LivraisonController extends Controller
     public function updateAction(Request $request, $id)
     {
         $Livraison= $this->getDoctrine()->getmanager()->getRepository(Livraison::class)->find($id);
+
         $form= $this->createForm(LivraisonType::class,$Livraison);
         $form->handleRequest($request);
         $ef= $this->getDoctrine()->getManager();
@@ -60,6 +61,13 @@ class LivraisonController extends Controller
         }
         return $this->render("@Livraison/livraison/update.html.twig",array("forma"=>$form->createView()));
 
+    }
+    public function qrAction($id)
+    {
+        $Livraison= $this->getDoctrine()->getmanager()->getRepository(Livraison::class)->find($id);
+        $qrCode = new QrCode("votre nom est: ".$Livraison->getClient()."\n"." votre pays est: ".$Livraison->getPays()."\n"." votre ville est: ".$Livraison->getVille()."\n"." votre adresse est: ".$Livraison->getAdresse()."\n"." date de livraison: ".$Livraison->getDateliv()->format('d/m/Y')."\n"." numero commande: ".$Livraison->getCommande());
+        header('Content-Type: '.$qrCode->getContentType());
+        echo $qrCode->writeString();
     }
 
     public function callAction()

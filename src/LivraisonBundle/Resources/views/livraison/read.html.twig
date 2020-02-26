@@ -20,6 +20,7 @@
                     <td>livreure</td>
                     <td>Supprission</td>
                     <td>Modification</td>
+                    <td>qr code</td>
                 </tr>
                 {% for livraison in livraisons %}
                     <tr>
@@ -35,6 +36,7 @@
                         <td>{{ livraison.livreure }}</td>
                         <td> <a href="{{ path('deleteliv',{'id':livraison.id}) }}">supprimer</a></td>
                         <td> <a href="{{ path('updateliv',{'id':livraison.id}) }}">Modifier</a></td>
+                        <td> <a href="{{ path('qr',{'id':livraison.id}) }}">avoir code</a></td>
                     </tr>
                 {% endfor %}
             </table>

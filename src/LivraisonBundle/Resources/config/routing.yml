@@ -33,3 +33,6 @@ map:
 call:
     path:     /call
     defaults: { _controller: LivraisonBundle:Livraison:call }
+qr:
+      path:     /qr/{id}
+      defaults: { _controller: LivraisonBundle:Livraison:qr }

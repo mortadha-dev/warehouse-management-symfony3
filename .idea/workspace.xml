@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c36f2d9e-5cf5-4251-b738-18fb32fa2766" name="Default Changelist" comment="" />
+    <list default="true" id="c36f2d9e-5cf5-4251-b738-18fb32fa2766" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/marww.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/marww.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LivraisonBundle/Controller/LivraisonController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/LivraisonBundle/Controller/LivraisonController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LivraisonBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/LivraisonBundle/Resources/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LivraisonBundle/Resources/views/livraison/read.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/LivraisonBundle/Resources/views/livraison/read.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LivraisonBundle/Resources/views/livreure/read.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/LivraisonBundle/Resources/views/livreure/read.html.twig" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +111,10 @@
       <path value="$PROJECT_DIR$/pi/vendor/symfony/polyfill-php56" />
       <path value="$PROJECT_DIR$/vendor/twilio/sdk" />
       <path value="$PROJECT_DIR$/vendor/vresh/twilio-bundle" />
+      <path value="$PROJECT_DIR$/vendor/khanamiryan/qrcode-detector-decoder" />
+      <path value="$PROJECT_DIR$/vendor/endroid/qr-code" />
+      <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
     </include_path>
   </component>
   <component name="ProjectId" id="1XUUtnffrEB4UsvAqQwNbaZGWJn" />
@@ -108,20 +122,20 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/backend/dist/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp\www\marwen-pi\pi\web\backend\dist\img" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\marwen-pi\web\backend\dist\img" />
       <recent name="C:\wamp64\www\marwen-pi\web" />
+      <recent name="C:\wamp64\www\marwen-pi\web\backend\dist\img" />
       <recent name="C:\wamp\www\marwen-pi\pi\web\backend\dist\img" />
       <recent name="C:\wamp\www\marwen-pi\pi\src\LivraisonBundle\Resources\views\livraison" />
       <recent name="C:\wamp\www\marwen-pi\pi\src\LivraisonBundle\Form" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp\www\marwen-pi\pi\web\backend\dist\img" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -184,6 +198,12 @@
       <workItem from="1582198634193" duration="2601000" />
       <workItem from="1582202737636" duration="4330000" />
       <workItem from="1582208521530" duration="26686000" />
+      <workItem from="1582272214241" duration="3913000" />
+      <workItem from="1582470458050" duration="89000" />
+      <workItem from="1582576753181" duration="5914000" />
+      <workItem from="1582663952663" duration="7517000" />
+      <workItem from="1582677049798" duration="591000" />
+      <workItem from="1582724233347" duration="884000" />
     </task>
     <servers />
   </component>
