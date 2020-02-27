@@ -79,6 +79,9 @@ class RegistrationController extends Controller
                 $client->setNom($user->getUsername());
                 $client->setPrenom("user has only username");
                 $client->setAddresse("doura");
+                $roles = $user->getRoles();
+                $roles[] = "ROLE_ADMIN";
+                $user->setRoles($roles);
                 $this->getDoctrine()->getManager()->persist($client);
                 $this->getDoctrine()->getManager()->flush();
                 $event = new FormEvent($form, $request);

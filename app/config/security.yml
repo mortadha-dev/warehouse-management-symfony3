@@ -30,3 +30,4 @@ security:
         - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/admin/vente/, role: ROLE_VENTE }
         - { path: ^/rool/, role: ROLE_ADMIN }
+        - { path: ^/checkout/, role: ROLE_USER }
