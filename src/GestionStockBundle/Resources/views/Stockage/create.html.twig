@@ -1,0 +1,25 @@
+{%  extends 'backend/base.html.twig' %}
+
+{% block content %}
+    <html>
+    <head>
+        <title>
+            Ajout des produits dans le stock
+        </title>
+    </head>
+    <body>
+    <center>
+        <h1>Ajouter un produit dans le stock</h1>
+        <fieldset style="width: 50%">
+            {{ form_start(form) }}
+            Quantité:* {{ form_widget(form.quantite) }}</br>
+            date de stockage:* {{ form_widget(form.datedestockage) }}</br>
+            produit à stocker:* {{ form_widget(form.produit) }}</br>
+            entrepot associé:* {{ form_widget(form.entrepot) }}</br>
+            {{ form_widget(form.Ajouter_produit_au_stockage) }}</br>
+            {{ form_end(form) }}
+        </fieldset>
+    </center>
+    </body>
+    </html>
+{% endblock %}

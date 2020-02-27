@@ -1,3 +1,5 @@
+{% extends 'backend/base.html.twig' %}
+{% block content %}
 <html>
 <head>
     <title>List des fournisseurs</title>
@@ -5,27 +7,38 @@
 
 </head>
 <body>
+
+{% for message in app.flashes('info') %}
+    <div class="alert alert-success">
+        {{ message }}
+    </div>
+{% endfor %}
 <center>
     <h1>Liste des fournisseurs</h1>
     <table border="6">
         <tr>
-            <th>civilite</th>
+            <th>code</th>
             <th>nom</th>
             <th>prenom</th>
             <th>telephone</th>
             <th>ville</th>
             <th>pays</th>
             <th>adresseEmail</th>
+            <th>vitesse d'importation</th>
+            <th>Modification</th>
+            <th>Suppression</th>
         </tr>
         {% for fournisseur in fournisseurs %}
             <tr>
-                <td>{{ fournisseur.civilite }}</td>
+                <td>{{ fournisseur.code }}</td>
                 <td>{{ fournisseur.nom }}</td>
                 <td>{{ fournisseur.prenom }}</td>
                 <td>{{ fournisseur.telephone }}</td>
                 <td>{{ fournisseur.ville }}</td>
                 <td>{{ fournisseur.pays }}</td>
                 <td>{{ fournisseur.adresseEmail }}</td>
+                <td>{{ fournisseur.rapidite }}</td>
+
 
                 <td> <a href="{{ path('gestion_achat_fournisseur_update',{'id':fournisseur.id}) }}">Modifier</a></td>
                 <td> <a href="{{ path('gestion_achat_fournisseur_delete',{'id':fournisseur.id}) }}">supprimer</a></td>
@@ -38,4 +51,5 @@
 
 </body>
 </html>
+{% endblock %}
 

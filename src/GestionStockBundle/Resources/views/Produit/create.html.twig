@@ -1,0 +1,24 @@
+{%  extends 'backend/base.html.twig' %}
+{% block content %}
+<html>
+<head>
+    <title>
+        Ajout des produits
+    </title>
+</head>
+<body>
+<center>
+    <h1>Ajouter un produit</h1>
+    <fieldset style="width: 50%">
+        {{ form_start(form) }}
+        Description:* {{ form_widget(form.description) }}</br>
+        Libelle:* {{ form_widget(form.libelle) }}</br>
+        Quantite:* {{ form_widget(form.quantite) }}</br>
+        Quantite minimum:* {{ form_widget(form.quantitemin) }}</br>
+        {{ form_widget(form.ajouter) }}</br>
+        {{ form_end(form) }}
+    </fieldset>
+</center>
+</body>
+</html>
+{% endblock %}

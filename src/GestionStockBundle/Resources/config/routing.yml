@@ -1,0 +1,45 @@
+gestion_stock_homepage:
+    path:     /admin
+    defaults: { _controller: GestionStockBundle:Entrepot:index }
+entrepot_homepage:
+    path:     /administration/entrepot/read
+    defaults: { _controller: GestionStockBundle:Entrepot:read }
+create_entrepot:
+    path:     /administration/entrepot/create
+    defaults: { _controller: GestionStockBundle:Entrepot:create }
+update_entrepot:
+    path:     /administration/entrepot/update/{id}
+    defaults: { _controller: GestionStockBundle:Entrepot:update }
+delete_entrepot:
+    path:     /administration/entrepot/delete/{id}
+    defaults: { _controller: GestionStockBundle:Entrepot:delete }
+produit_homepage:
+    path:     /administration/produit/readproduit
+    defaults: { _controller: GestionStockBundle:Produit:read }
+create_produit:
+    path:     /administration/produit/createproduit
+    defaults: { _controller: GestionStockBundle:Produit:create }
+updateproduit:
+    path:     /administration/produit/updateproduit/{id}
+    defaults: { _controller: GestionStockBundle:Produit:update }
+deleteproduit:
+    path:     /administration/produit/deleteproduit/{id}
+    defaults: { _controller: GestionStockBundle:Produit:delete }
+pdf:
+    path:     /administration/entrepot/read/pdf
+    defaults: { _controller: GestionStockBundle:Entrepot:indexx }
+produit_supprimer:
+    path:     /administration/produit/produitsupp
+    defaults: { _controller: GestionStockBundle:Produit:produitsupp }
+recupereproduit:
+    path:     /administration/produit/produitrecupere/{id}
+    defaults: { _controller: GestionStockBundle:Produit:recuperer }
+produitnnstocke:
+    path:     /administration/stockage/produitnnstocke
+    defaults: { _controller: GestionStockBundle:Stockage:readnnstocke }
+produitstocke:
+    path:     /administration/stockage/produitstocke
+    defaults: { _controller: GestionStockBundle:Stockage:read }
+create_stockage:
+    path:     /administration/stockage/createstockage/{id}
+    defaults: { _controller: GestionStockBundle:Stockage:create }

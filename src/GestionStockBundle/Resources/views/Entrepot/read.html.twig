@@ -1,0 +1,49 @@
+{% extends 'backend/base.html.twig' %}
+{% block content %}
+    <html>
+    <img src={{ asset('gestion-organisation-entrepots-méthode.jpg')}} width="350px">
+    <head>
+        <title>Liste des entrepots</title>
+    </head>
+    <body>
+    <center>
+        <h1>Liste des entrepots</h1>
+        <table border="1">
+            <tr>
+                <th>Id</th>
+                <th>Nom court lieu</th>
+                <th>Description</th>
+                <th>Adresse</th>
+                <th>Code postale</th>
+                <th>Ville</th>
+                <th>Pays</th>
+                <th>Stock physique</th>
+                <th>Modification</th>
+                <th>Suppression</th>
+            </tr>
+            {% for entrepot in entrepots %}
+                <tr>
+                    <td>{{ entrepot.id }}</td>
+                    <td>{{ entrepot.nomcourtlieu }}</td>
+                    <td>{{ entrepot.description }}</td>
+                    <td>{{ entrepot.adress }}</td>
+                    <td>{{ entrepot.codepostale }}</td>
+                    <td>{{ entrepot.ville }}</td>
+                    <td>{{ entrepot.pays }}</td>
+                    <td>{{ entrepot.stockphysique }}</td>
+                    <td> <a href="{{ path('update_entrepot',{'id':entrepot.id}) }}">Modifier</a></td>
+                    <td> <a href="{{ path('delete_entrepot',{'id':entrepot.id}) }}">supprimer</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+    <br>
+    <br>
+    <br>
+    <td> <a href="{{ path('pdf')}}"><div style="color: red"><h3> télécharger la liste des entrepôts</h3></div></a></td>
+
+
+    </body>
+    </html>
+
+{% endblock %}

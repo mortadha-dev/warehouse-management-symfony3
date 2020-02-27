@@ -1,0 +1,51 @@
+{% extends 'backend/base.html.twig' %}
+{% block content %}
+    <html>
+    <head>
+        <title>List des commentaires</title>
+        <img src="{{ asset('commande-png-2.png') }}" id="imgLogo" width="200px">
+
+    </head>
+    <body>
+    <center>
+        <h1>Liste des commentaires des fournisseurs</h1>
+        <table border="6">
+            <tr>
+                <th>libellecommande</th>
+                <th>descriptioncommande<br></th>
+                <th>etat<br></th>
+
+                <th>commentaire du fournisseur</th>
+
+            </tr>
+            {% for commande in commandes %}
+                <tr>
+                    <td>{{ commande.produit.libelle}}</td>
+                    <td>{{ commande.descriptioncommande}}</td>
+                    <td>{{ commande.etat}}<div style="color:red"></div></td>
+                    <td>{{ commande.commentaire}}<div style="color:red"></div></td>
+
+
+                </tr>
+            {% endfor %}
+
+        </table><br>
+        <div class="container navigation">
+            {{ knp_pagination_render(commandes) }}
+        </div>
+        <table>
+            <br>
+            <br>
+        <tr>
+           <td> <h3> <a href="{{ path('gestion_achat_commande_read')}}" style="color:red" >retour a la liste des commandes  </a></h3></td>
+
+        </tr>
+
+        </table>
+    </center>
+
+    </body>
+    </html>
+{% endblock %}
+
+

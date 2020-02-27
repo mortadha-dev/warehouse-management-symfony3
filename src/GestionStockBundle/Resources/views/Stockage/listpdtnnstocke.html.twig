@@ -1,0 +1,46 @@
+{%  extends 'backend/base.html.twig' %}
+
+{% block content %}<html>
+    <head>
+        <title>Liste des produits non stockées et stockées partiellement</title>
+    </head>
+    <body>
+    <center>
+        <h1>Liste des produits non stockées et stockées partiellement</h1>
+        <table border="1">
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Quantite</th>
+
+
+            </tr>
+            {% for produit in produitsNonStocke %}
+                <tr>
+                    <td>{{ produit.id }}</td>
+                    <td>{{ produit.description }}</td>
+                    <td>{{ produit.quantite }}</td>
+                    <td> <a href="{{ path('create_stockage',{'id':produit.id}) }}">Réstocker</a></td>
+
+
+                </tr>
+
+            {% endfor %}
+            {% for produit in produitStockepartial %}
+                <tr>
+                    <td>{{ produit.id }}</td>
+                    <td>{{ produit.description }}</td>
+                    <td>{{ produit.quantite }}</td>
+                    <td> <a href="{{ path('create_stockage',{'id':produit.id}) }}">Réstocker</a></td>
+
+
+
+                </tr>
+
+            {% endfor %}
+        </table>
+    </center>
+
+    </body>
+    </html>
+{% endblock %}

@@ -36,3 +36,6 @@ services:
     authentication.handler.login_success_handler:
         class:  UserBundle\Security\LoginSuccessHandler
         arguments:  ['@router', '@security.authorization_checker']
+    GestionAchatBundle\EventListener\FullCalendarListener:
+        tags:
+            - { name: 'kernel.event_listener', event: 'fullcalendar.set_data', method: loadEvents }

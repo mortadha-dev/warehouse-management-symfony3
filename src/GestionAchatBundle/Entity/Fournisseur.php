@@ -3,14 +3,16 @@
 namespace GestionAchatBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * fournisseur
  *
  * @ORM\Table(name="fournisseur")
- * @ORM\Entity(repositoryClass="GestionAchatBundle\Repository\fournisseurRepository")
+ * @ORM\Entity(repositoryClass="GestionAchatBundle\Repository\FournisseurRepository")
  */
-class fournisseur
+class Fournisseur
 {
     /**
      * @var int
@@ -24,14 +26,27 @@ class fournisseur
     /**
      * @var string
      *
-     * @ORM\Column(name="civilite", type="string", length=255)
+     * @ORM\Column(name="code", type="string", length=255)
      */
-    private $civilite;
+
+    private $code;
+
 
     /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
+     *
+     * @Assert\Length(
+     * min = 3,
+     *max = 50,
+     *minMessage = "le nom du fournisseur doit comporter au moins 3 caractères",
+     *maxMessage = "le nom du fournisseur ne doit pas dépasser les {{limit}} 50 caractères"
+     *
+     * )
+     *
+     ** @Assert\NotNull(message="le nom du fournisseur ne doit pas etre null ")
+     *
      */
     private $nom;
 
@@ -39,6 +54,17 @@ class fournisseur
      * @var string
      *
      * @ORM\Column(name="prenom", type="string", length=255)
+     *
+     * @Assert\Length(
+     * min = 3,
+     *max = 50,
+     *minMessage = "le prenom du fournisseur doit comporter au moins 3 caractères",
+     *maxMessage = "le prenom du fournisseur ne doit pas dépasser les {{limit}} 50 caractères"
+     *
+     * )
+     *
+     ** @Assert\NotNull(message="le prenom du fournisseur ne doit pas etre null ")
+     *
      */
     private $prenom;
 
@@ -53,6 +79,17 @@ class fournisseur
      * @var string
      *
      * @ORM\Column(name="ville", type="string", length=255)
+     *
+     * @Assert\Length(
+     * min = 3,
+     *max = 50,
+     *minMessage = "la ville du fournisseur doit comporter au moins 3 caractères",
+     *maxMessage = "la ville du fournisseur ne doit pas dépasser les {{limit}} 50 caractères"
+     *
+     * )
+     *
+     ** @Assert\NotNull(message="la ville du fournisseur ne doit pas etre null ")
+     *
      */
     private $ville;
 
@@ -60,6 +97,17 @@ class fournisseur
      * @var string
      *
      * @ORM\Column(name="pays", type="string", length=255)
+     *
+     * @Assert\Length(
+     * min = 3,
+     *max = 50,
+     *minMessage = "le pays du fournisseur doit comporter au moins 3 caractères",
+     *maxMessage = "le pays du fournisseur ne doit pas dépasser les {{limit}} 50 caractères"
+     *
+     * )
+     *
+     ** @Assert\NotNull(message="le pays du fournisseur ne doit pas etre null ")
+     *
      */
     private $pays;
 
@@ -70,6 +118,19 @@ class fournisseur
      */
     private $adresseEmail;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rapidite", type="string", length=255)
+     */
+    private $rapidite;
+
+
+    /**
+     * @ORM\OneToOne(targetEntity="UserBundle\Entity\User")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+     private $user;
 
     /**
      * Get id
@@ -82,28 +143,21 @@ class fournisseur
     }
 
     /**
-     * Set civilite
-     *
-     * @param string $civilite
-     *
-     * @return fournisseur
+     * @return string
      */
-    public function setCivilite($civilite)
+    public function getCode()
     {
-        $this->civilite = $civilite;
-
-        return $this;
+        return $this->code;
     }
 
     /**
-     * Get civilite
-     *
-     * @return string
+     * @param string $code
      */
-    public function getCivilite()
+    public function setCode($code)
     {
-        return $this->civilite;
+        $this->code = $code;
     }
+
 
     /**
      * Set nom
@@ -248,5 +302,40 @@ class fournisseur
     {
         return $this->adresseEmail;
     }
+
+    /**
+     * @return string
+     */
+    public function getRapidite()
+    {
+        return $this->rapidite;
+    }
+
+    /**
+     * @param string $rapidite
+     */
+    public function setRapidite($rapidite)
+    {
+        $this->rapidite = $rapidite;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+
+
 }
 

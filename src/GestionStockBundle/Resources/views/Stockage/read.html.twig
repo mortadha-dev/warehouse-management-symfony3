@@ -1,0 +1,34 @@
+{% extends 'backend/base.html.twig' %}
+
+{% block content %}
+    <html>
+    <head>
+        <title>Liste des produits stockées</title>
+    </head>
+    <body>
+    <center>
+        <h1>Liste des produits stockées</h1>
+        <table border="1">
+            <tr>
+                <th>Id</th>
+                <th>Quantite</th>
+                <th>Date de stockage</th>
+                <th>produit stockée</th>
+                <th>entrepot associée à la stockage</th>
+            </tr>
+            {% for stockage in stockages %}
+                <tr>
+                    <td>{{ stockage.id }}</td>
+                    <td>{{ stockage.quantite }}</td>
+                    <td>{{ stockage.datedestockage | date }}</td>
+                    <td>{{ stockage.produit.id }}</td>
+                    <td>{{ stockage.entrepot.id }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+
+    </body>
+    </html>
+
+{% endblock %}

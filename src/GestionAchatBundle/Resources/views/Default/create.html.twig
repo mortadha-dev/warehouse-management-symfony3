@@ -1,5 +1,9 @@
+{% extends 'backend/base.html.twig' %}
+{% block content %}
 
 <html>
+<img src="{{ asset('choix-fournisseur-conditionne-competitivite-entreprise-F.jpg') }}" id="imgLogo" width="300px">
+
 <head>
     <title>
         Ajout de fournisseur
@@ -7,19 +11,17 @@
 </head>
 <body>
 
+{% for message in app.flashes('info') %}
+    <div class="alert alert-danger">
+        {{ message }}
+    </div>
+{% endfor %}
+
 <h1>Ajouter un fournisseur</h1>
 <fieldset style="width: 30%">
-    {{ form_start(form) }}
-    civilite:* {{ form_widget(form.civilite) }}</br>
-    Nom:* {{ form_widget(form.nom) }}</br>
-    Prenom:* {{ form_widget(form.prenom) }}</br>
-    Telephone:* {{ form_widget(form.telephone) }}</br>
-    Ville:* {{ form_widget(form.ville) }}</br>
-    Pays:* {{ form_widget(form.pays) }}</br>
-    adresseEmail:* {{ form_widget(form.adresseEmail) }}</br>
-    {{ form_widget(form.enregistrer) }}
-    {{ form_end(form) }}
+    {{ form(form) }}
 </fieldset>
 
 </body>
 </html>
+{% endblock %}

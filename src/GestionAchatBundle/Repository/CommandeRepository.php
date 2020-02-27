@@ -10,4 +10,10 @@ namespace GestionAchatBundle\Repository;
  */
 class CommandeRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findCommands($idFournisseur){
+        $query = $this->getEntityManager()
+            ->createQuery("SELECT c FROM GestionAchatBundle:Commande c WHERE c.fournisseur = :idFournisseur AND c.etat = 'en attente'")->setParameter('idFournisseur', $idFournisseur);
+        return $query->getResult();
+    }
+
 }

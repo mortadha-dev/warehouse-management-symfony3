@@ -30,9 +30,9 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-        {#<img src="{{ asset('backend/test.jpeg') }}" alt="AdminLTE Logo" class="icon-fluid icon-thumbnail"
-             style="opacity: .8">#}
-        <a class="navbar-brand" href="index.html">Debou</a>
+        <img src="{{ asset('Bundles/ressources/front/mobile-shelving-system-stock-photos_csp17849232.jpg') }}" >
+
+        <a class="navbar-brand" >Debou</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
         </button>
@@ -40,6 +40,17 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active"><a href="accueil" class="nav-link">Accueil</a></li>
+                <li class="dropdown">
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Les Achats</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ path('importer') }}">les commandes à importer</a>
+                            <a class="dropdown-item" href="#">Abonnements</a>
+                            <a class="dropdown-item" href="#">plus nothing</a>
+                        </div>
+                    </div>
+                </li>
+
                 <li class="nav-item"><a href="#" class="nav-link">Vente</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Livraison</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Services aprés vente</a></li>
@@ -68,7 +79,9 @@
 </nav>
 <!-- END nav -->
 
-<div class="hero-wrap" style="background-image: url({{ asset('Bundles/ressources/front/images/bg_2.jpg') }});" data-stellar-background-ratio="0.5">
+<div class="hero-wrap" style="background-image: url({{ asset('Bundles/ressources/front/images/unnamed.jpg') }});" data-stellar-background-ratio="5">
+    {% block tssou %}{% endblock %}
+
     <div class="overlay"></div>
     <div class="overlay-2"></div>
     <div class="container">
@@ -661,18 +674,17 @@
     <div class="container">
         <div class="row justify-content-center pb-5">
             <div class="col-md-12 heading-section text-center ftco-animate">
-                <span class="subheading">Agents</span>
-                <h2 class="mb-4">Our Agents</h2>
+                <h2 class="mb-4">Our team</h2>
             </div>
         </div>
         <div class="row">
             <div class="col-md-3 ftco-animate">
                 <div class="agent">
                     <div class="img">
-                        <img src="images/team-1.jpg" class="img-fluid" alt="Colorlib Template">
+                        <img src="{{ asset('mortadha.jpg') }}" class="img-fluid" alt="Colorlib Template">
                     </div>
                     <div class="desc">
-                        <h3><a href="properties.html">Ben Ford</a></h3>
+                        <h3><a href="properties.html">Bouallagui Mortadha</a></h3>
                         <p class="h-info"><span class="ion-ios-filing icon"></span> <span class="details">43 Properties</span></p>
                     </div>
                 </div>
@@ -680,10 +692,10 @@
             <div class="col-md-3 ftco-animate">
                 <div class="agent">
                     <div class="img">
-                        <img src="images/team-2.jpg" class="img-fluid" alt="Colorlib Template">
+                        <img src="{{ asset('17159214_114500445748779_3759348350157753241_o.jpg') }}" class="img-fluid" alt="Colorlib Template">
                     </div>
                     <div class="desc">
-                        <h3><a href="properties.html">John Cooper</a></h3>
+                        <h3><a href="properties.html">Boujmil Tayssir</a></h3>
                         <p class="h-info"><span class="ion-ios-filing icon"></span> <span class="details">28 Properties</span></p>
                     </div>
                 </div>

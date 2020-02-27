@@ -1,0 +1,50 @@
+    <html>
+    <head>
+        <title>Commande</title>
+        <img src="{{ asset('commande-png-2.png') }}" id="imgLogo" width="200px">
+
+    </head>
+    <body>
+    <center>
+        <h1>Commande</h1>
+        <table border="6">
+            <tr>
+                <th>libellecommande</th>
+                <th>descriptioncommande<br></th>
+                <th>quantitecommande</th>
+                <th>date</th>
+                <th>Fournisseur</th>
+                <th>Produit</th>
+
+
+
+            {#    <th>Modification</th>
+                <th>suppression</th>#}
+
+            </tr>
+                <tr>
+                    <td>{{ commande.libellecommande }}</td>
+                    <td>{{ commande.descriptioncommande }}</td>
+                    <td>{{ commande.quantitecommande }}</td>
+                    <td>{{ commande.date | date}}</td>
+                    <td>{{ commande.fournisseur.nom}}</td>
+                    <td>{{ commande.produit.libelle}}</td>
+                  {#  <td><h2> <a href="#" style="color:red">accepter</a></h2></td>
+                    <td><h2> <a href="#" style="color:red">refuser</a></h2></td>#}
+
+
+                    {#<td> <a href="{{ path('gestion_achat_commande_update',{'id':commande.id}) }}">Modifier</a></td>
+                    <td> <a href="{{ path('gestion_achat_commande_delete',{'id':commande.id}) }}">supprimer</a></td>#}
+                </tr>
+
+        </table><br>
+        <tr>
+            <td> <h3> <a href="{{ path('booking_calendar')}}" style="color:red" >retour a la calendrier  </a></h3></td>
+
+        </tr>
+    </center>
+
+    </body>
+    </html>
+
+

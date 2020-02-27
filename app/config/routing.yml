@@ -1,3 +1,11 @@
+gestion_stock:
+    resource: "@GestionStockBundle/Resources/config/routing.yml"
+    prefix:   /
+
+livraison:
+    resource: "@LivraisonBundle/Resources/config/routing.yml"
+    prefix:   /
+
 gestion_achat:
     resource: "@GestionAchatBundle/Resources/config/routing.yml"
     prefix:   /
@@ -11,3 +19,6 @@ fos_user:
 user:
     resource: "@UserBundle/Resources/config/routing.yml"
     prefix:   /
+
+toiba_fullcalendar:
+    resource: "@FullCalendarBundle/Resources/config/routing.yaml"

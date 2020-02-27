@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>List des commande</title>
+        <script src="{{ asset('jquery-min.js') }}"> </script>
+        <center>
+        <img src="{{ asset('1200px-Hello_Web_Series_(Wordmark)_Logo.png') }}" id="imgLogo" width="390px">
+        </center>
+    </head>
+    <body>
+    <center>
+        <div class="white">
+        <h1>Liste des commandes</h1>
+        <table border="6">
+            <tr>
+                <th>libellecommande</th>
+                <th>descriptioncommande<br></th>
+                <th>quantitecommande</th>
+                <th>date</th>
+                <th>Fournisseur</th>
+                <th>Produit</th>
+                <th>accepter</th>
+                <th>refuser</th>
+
+            </tr>
+            {% for commande in commandes %}
+                <tr>
+                    <td>{{ commande.libellecommande }}</td>
+                    <td>{{ commande.descriptioncommande }}</td>
+                    <td>{{ commande.quantitecommande }}</td>
+                    <td>{{ commande.date | date}}</td>
+                    <td>{{ commande.fournisseur.nom}}</td>
+                    <td>{{ commande.produit.libelle}}</td>
+                    <td> <a href="{{ path('accept',{'id':commande.id}) }}"><h3><div style="color: red">accepter</div> </h3> </a></td>
+                    <td> <a id="se" href="{{ path('refus',{'id':commande.id}) }}"><h3><div style="color: red">refuser</div> </h3> </a></td>
+                </tr>
+            {% endfor %}
+        </div>
+
+        </table><br>
+
+        <div class="container navigation">
+            {{ knp_pagination_render(commandes) }}
+        </div>
+
+    </center>
+    <script>
+        $('#se').on('click', function() {
+            alert('voulez vous vraiment refuser');
+        });
+
+    </script>
+
+    </body>
+    </html>
+
+

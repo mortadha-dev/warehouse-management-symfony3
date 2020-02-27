@@ -1,0 +1,29 @@
+{%  extends 'backend/base.html.twig' %}
+{% block content %}
+<html>
+<head>
+    <title>
+        Ajout des Clubs
+    </title>
+</head>
+<body>
+<center>
+    <h1>Ajouter un entrepot</h1>
+    <fieldset style="width: 50%">
+        {{ form_start(form) }}
+        Nom:* {{ form_widget(form.nomcourtlieu) }}</br>
+        Description:* {{ form_widget(form.description) }}</br>
+        Adresse:* {{ form_widget(form.adress) }}</br>
+        Code postale:* {{ form_widget(form.codepostale) }}</br>
+        Ville:* {{ form_widget(form.ville) }}</br>
+        Pays:* {{ form_widget(form.pays) }}</br>
+        Stock physique:* {{ form_widget(form.stockphysique) }}</br>
+
+
+        {{ form_widget(form.ajouter) }}</br>
+        {{ form_end(form) }}
+    </fieldset>
+</center>
+</body>
+</html>
+{% endblock %}
