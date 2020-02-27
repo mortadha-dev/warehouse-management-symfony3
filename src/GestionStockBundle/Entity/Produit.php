@@ -70,6 +70,48 @@ class Produit
     private $dateSupp;
 
 
+    /**
+    * @ORM\Column(type="string")
+    */
+    private $prix;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $image_filename;
+
+    /**
+     * @return mixed
+     */
+    public function getPrix()
+    {
+        return $this->prix;
+    }
+
+    /**
+     * @param mixed $prix
+     */
+    public function setPrix($prix)
+    {
+        $this->prix = $prix;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImageFilename()
+    {
+        return $this->image_filename;
+    }
+
+    /**
+     * @param mixed $image_filename
+     */
+    public function setImageFilename($image_filename)
+    {
+        $this->image_filename = $image_filename;
+    }
+
 
 
     /**

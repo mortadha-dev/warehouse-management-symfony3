@@ -21,13 +21,14 @@ class AppKernel extends Kernel
 
             new AppBundle\AppBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-
             new UserBundle\UserBundle(),
             new GestionAchatBundle\GestionAchatBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Toiba\FullCalendarBundle\FullCalendarBundle(),
             new LivraisonBundle\LivraisonBundle(),
             new GestionStockBundle\GestionStockBundle(),
+            new GestionVenteBundle\GestionVenteBundle(),
+            new ToolBundle\ToolBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

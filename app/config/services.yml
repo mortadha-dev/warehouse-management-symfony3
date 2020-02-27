@@ -12,7 +12,7 @@ services:
         autoconfigure: true
         # this means you cannot fetch services directly from the container via $container->get()
         # if you need to do this, you can override this setting on individual services
-        public: false
+        public: true
 
     # makes classes in src/AppBundle available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
@@ -39,3 +39,21 @@ services:
     GestionAchatBundle\EventListener\FullCalendarListener:
         tags:
             - { name: 'kernel.event_listener', event: 'fullcalendar.set_data', method: loadEvents }
+
+    shopping_cart:
+         class: AppBundle\Store\ShoppingCart
+         autowire: true
+
+    gestionvente.twig.extension.association_extension:
+        class: GestionVenteBundle\Twig\Extension\AssociationExtension
+        arguments: ['@service_container']
+        tags:
+            - {name: 'twig.extension'}
+
+    twig.extension:
+        # Register the class (The namespace must match)
+        class: GestionVenteBundle\Twig\Extension\TwigExtensions
+        # Inject doctrine as first parameter
+        arguments: [ '@doctrine']
+        tags:
+            - { name: 'twig.extension' }

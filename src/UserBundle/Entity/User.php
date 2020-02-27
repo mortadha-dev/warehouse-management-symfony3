@@ -1,13 +1,13 @@
 <?php
-// src/AppBundle/Entity/User.php
 
 namespace UserBundle\Entity;
+
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="fos_user")
+ * @ORM\Table(name="user")
  */
 class User extends BaseUser
 {
@@ -19,31 +19,33 @@ class User extends BaseUser
     protected $id;
 
     /**
+     * @ORM\Column(type="string", unique=true, nullable=true)
+     */
+    private $stripeCustomerId;
+
+    /**
      * @ORM\OneToOne(targetEntity="fournisseur")
      */
-    protected $fournisseur;
-
-
-    public function __construct()
-    {
-        parent::__construct();
-        // your own logic
-    }
-
+    private $fournisseur;
     /**
      * @return mixed
      */
-    public function getId()
+    public function getStripeCustomerId()
     {
-        return $this->id;
+        return $this->stripeCustomerId;
     }
 
     /**
-     * @param mixed $id
+     * @param mixed $stripeCustomerId
      */
-    public function setId($id)
+    public function setStripeCustomerId($stripeCustomerId)
     {
-        $this->id = $id;
+        $this->stripeCustomerId = $stripeCustomerId;
+    }
+
+    public function getId()
+    {
+        return $this->id;
     }
 
     /**
@@ -61,5 +63,6 @@ class User extends BaseUser
     {
         $this->fournisseur = $fournisseur;
     }
+
 
 }

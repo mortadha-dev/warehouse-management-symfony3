@@ -1,5 +1,5 @@
-{% extends 'frontend/base.html.twig' %}
-{% block title %} {{ product.name }} {% endblock %}
+{% extends 'frontend/base-vente.html.twig' %}
+{% block title %} {{ product.libelle }} {% endblock %}
 
 
 {% block container %}{% endblock %}
@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <h1>{{ product.name }}</h1>
+                <h1>{{ product.libelle }}</h1>
             </div>
         </div>
         <div class="row">
@@ -18,7 +18,7 @@
             </div>
             <div class="col-xs-12 col-sm-6">
                 <div class="product-show-details-container product-price">
-                    <p>Price: <strong>${{ product.price }}</strong></p>
+                    <p>Price: <strong>${{ product.prix }}</strong></p>
                 </div>
                 <div class="product-show-details-container product-description">
                     <p>{{ product.description }}</p>

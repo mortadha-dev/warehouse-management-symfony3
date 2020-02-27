@@ -1,3 +1,18 @@
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+## HAZEM
+vente_front:
+    resource: "@GestionVenteBundle/Resources/config/routing-front.yml"
+    prefix: /vente
+
+vente_back:
+    resource: "@GestionVenteBundle/Resources/config/routing-back.yml"
+    prefix: /admin/vente
+
+
 gestion_stock:
     resource: "@GestionStockBundle/Resources/config/routing.yml"
     prefix:   /
@@ -9,6 +24,11 @@ livraison:
 gestion_achat:
     resource: "@GestionAchatBundle/Resources/config/routing.yml"
     prefix:   /
+
+
+tool:
+    resource: "@ToolBundle/Resources/config/routing.yml"
+    prefix:   /tool
 
 #app:
 #    resource: '@AppBundle/Controller/'
@@ -22,3 +42,4 @@ user:
 
 toiba_fullcalendar:
     resource: "@FullCalendarBundle/Resources/config/routing.yaml"
+

@@ -1,4 +1,4 @@
-{% extends 'frontend/base.html.twig' %}
+{% extends 'frontend/base-vente.html.twig' %}
 {% block nav_acceuil %} <li class="nav-item"><a href="{{ path('homepage') }}" class="nav-link">Accueil</a></li> {% endblock %}
 {% block nav_vente %} <li class="nav-item active"><a href="{{ path('vente_page') }}" class="nav-link">Vente</a></li> {% endblock %}
 {% block container %}
@@ -111,7 +111,7 @@
                 </div>
             </div>
             <div id="products-row" class="row">
-                {% for product in products %}
+                {% for product in produits %}
                 <div class="col-md-4">
                     <div class="property-wrap ftco-animate">
                         <div class="img d-flex align-items-center justify-content-center" style="background-image: url({{ asset('uploads/'~product.imageFilename) }});">
@@ -134,8 +134,8 @@
                             </div>
                         </div>
                         <div class="text">
-                            <p class="price mb-3"><span class="">${{ product.price }}</span><span class="orig-price"></span></p>
-                            <h3 class="mb-0"><a href="{{ path('product_show', {'id': product.id}) }}">{{ product.name }}</a></h3>
+                            <p class="price mb-3"><span class="">${{ product.prix }}</span><span class="orig-price"></span></p>
+                            <h3 class="mb-0"><a href="{{ path('product_show', {'id': product.id }) }}">{{ product.libelle}}</a></h3>
                             <span class="location d-inline-block mb-3"><i class="ion-ios-pin mr-2"></i>2854 Meadow View Drive, Hartford, USA</span>
                         </div>
                     </div>

@@ -2,7 +2,7 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\User;
+use UserBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class BaseController extends Controller

@@ -5,6 +5,7 @@ namespace AppBundle\Store;
 use AppBundle\Entity\Product;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
+use GestionStockBundle\Entity\Produit;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
@@ -24,7 +25,7 @@ class ShoppingCart
         $this->em = $em;
     }
 
-    public function addProduct(Product $product)
+    public function addProduct(Produit $product)
     {
         $products = $this->getProducts();
 
@@ -36,12 +37,12 @@ class ShoppingCart
     }
 
     /**
-     * @return Product[]
+     * @return Produit[]
      */
     public function getProducts()
     {
         if ($this->products === null) {
-            $productRepo = $this->em->getRepository('AppBundle:Product');
+            $productRepo = $this->em->getRepository('GestionStockBundle:Produit');
             $ids = $this->session->get(self::CART_PRODUCTS_KEY, []);
             $products = [];
             foreach ($ids as $id) {
@@ -82,7 +83,7 @@ class ShoppingCart
     {
         $total=0;
         foreach ($this->getProducts() as $product) {
-            $total += $product->getPrice() * intval($this->association[$product->getId()]);
+            $total += $product->getPrix() * intval($this->association[$product->getId()]);
         }
         $this->session->set(self::CART_PRODUCTS_TOTAL, $total);
     }
@@ -93,13 +94,13 @@ class ShoppingCart
     }
 
     /**
-     * @param Product[] $products
+     * @param Produit[] $products
      */
     private function updateProducts(array $products)
     {
         $this->products = $products;
 
-        $ids = array_map(function(Product $item) {
+        $ids = array_map(function(Produit $item) {
             return $item->getId();
         }, $products);
 

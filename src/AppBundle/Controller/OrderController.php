@@ -2,7 +2,7 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Product;
+use GestionStockBundle\Entity\Produit;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
@@ -15,7 +15,7 @@ class OrderController extends BaseController
      * @Route("/cart/product/{id}", name="order_add_product_to_cart")
      * @Method("POST")
      */
-    public function addProductToCartAction(Product $product)
+    public function addProductToCartAction(Produit $product)
     {
         $this->get('shopping_cart')
             ->addProduct($product);
