@@ -1,0 +1,26 @@
+{% extends 'backend/base.html.twig' %}
+{% block content %}
+<h1>Recherche commande par libelle</h1>
+{{ form(Form) }}
+
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>libelle_commande</th>
+        <th>description_commande</th>
+        <th>quantite_commande</th>
+        <th>fournisseur_id</th>
+        <th>produit_id</th>
+    </tr>
+    {% for f in commandes %}
+        <tr>
+            <td>{{ f.id }}</td>
+           <td>{{ f.libellecommande }}</td>
+            <td>{{ f.descriptioncommande }}</td>
+            <td>{{ f.quantitecommande }}</td>
+            <td>{{ f.fournisseur.nom }}</td>
+            <td>{{ f.produit.libelle }}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

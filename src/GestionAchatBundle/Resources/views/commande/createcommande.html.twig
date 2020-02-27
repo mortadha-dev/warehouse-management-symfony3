@@ -1,0 +1,20 @@
+{% extends 'backend/base.html.twig' %}
+{% block content %}
+
+<html>
+<head>
+    <title>
+        Ajout de commande
+    </title>
+</head>
+<img src="{{ asset('commander-en-ligne-spiq.jpg') }}" id="imgLogo" width="350px">
+
+<body>
+
+<h1>Ajouter une commande</h1>
+<br style="width: 30%">
+{{ form(form) }}
+</body>
+</html>
+{% endblock %}
+

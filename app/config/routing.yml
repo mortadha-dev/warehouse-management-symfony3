@@ -1,23 +1,14 @@
+gestion_stock:
+    resource: "@GestionStockBundle/Resources/config/routing.yml"
+    prefix:   /
 
+livraison:
+    resource: "@LivraisonBundle/Resources/config/routing.yml"
+    prefix:   /
 
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
-
-
-vente_front:
-    resource: "@GestionVenteBundle/Resources/config/routing-front.yml"
-    prefix: /vente
-
-vente_back:
-    resource: "@GestionVenteBundle/Resources/config/routing-back.yml"
-    prefix: /admin/vente
-
-
-tool:
-    resource: "@ToolBundle/Resources/config/routing.yml"
-    prefix:   /tool
-
+gestion_achat:
+    resource: "@GestionAchatBundle/Resources/config/routing.yml"
+    prefix:   /
 
 #app:
 #    resource: '@AppBundle/Controller/'
@@ -25,4 +16,9 @@ tool:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
 
+toiba_fullcalendar:
+    resource: "@FullCalendarBundle/Resources/config/routing.yaml"

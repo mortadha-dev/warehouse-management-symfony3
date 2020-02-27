@@ -1,0 +1,38 @@
+{% extends 'backend/base.html.twig' %}
+
+{% block content %}
+    <html>
+    <head>
+        <title>Liste des produits</title>
+    </head>
+    <body>
+    <center>
+        <h1>Liste des produits</h1>
+        <table border="1">
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Libelle</th>
+                <th>quantite</th>
+                <th>quantitemin</th>
+                <th>Modification</th>
+                <th>Suppression</th>
+            </tr>
+            {% for produit in produits %}
+                <tr>
+                    <td>{{ produit.id }}</td>
+                    <td>{{ produit.description }}</td>
+                    <td>{{ produit.libelle }}</td>
+                    <td>{{ produit.quantite }}</td>
+                    <td>{{ produit.quantitemin }}</td>
+                    <td> <a href="{{ path('updateproduit',{'id':produit.id}) }}">Modifier</a></td>
+                    <td> <a href="{{ path('deleteproduit',{'id':produit.id}) }}">supprimer</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+
+    </body>
+    </html>
+
+{% endblock %}

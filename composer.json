@@ -15,21 +15,23 @@
     },
     "require": {
         "php": ">=5.5.9",
+        "ext-json": "*",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/orm": "^2.5",
-        "gedmo/doctrine-extensions": "^2.4",
+        "endroid/qr-code": "^2.5",
+        "friendsofsymfony/user-bundle": "~2.0",
         "incenteev/composer-parameter-handler": "^2.0",
-        "jms/serializer-bundle": "^2.4",
+        "knplabs/knp-paginator-bundle": "^3.0",
+        "mgilet/notification-bundle": "^3.1",
         "sensio/distribution-bundle": "^5.0.19",
         "sensio/framework-extra-bundle": "^5.0.0",
-        "stripe/stripe-php": "^7.25",
-        "symfony/filesystem": "^3.4",
         "symfony/monolog-bundle": "^3.1.0",
         "symfony/polyfill-apcu": "^1.0",
         "symfony/swiftmailer-bundle": "^2.6.4",
         "symfony/symfony": "3.4.*",
+        "toiba/fullcalendar-bundle": "^6.2",
         "twig/twig": "^1.0||^2.0",
-      "ext-json": "*"
+        "vresh/twilio-bundle": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

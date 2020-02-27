@@ -30,21 +30,32 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-        {#<img src="{{ asset('backend/test.jpeg') }}" alt="AdminLTE Logo" class="icon-fluid icon-thumbnail"
-             style="opacity: .8">#}
-        <a class="navbar-brand" href="{{ path('homepage') }}">Debou</a>
+        <img src="{{ asset('Bundles/ressources/front/mobile-shelving-system-stock-photos_csp17849232.jpg') }}" >
+
+        <a class="navbar-brand" >Debou</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
         </button>
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                {% block nav_acceuil %}<li class="nav-item active"><a href="{{ path('homepage') }}" class="nav-link">Accueil</a></li>{% endblock %}
-                {% block nav_vente %}<li class="nav-item"><a href="{{ path('vente_page') }}" class="nav-link">Vente</a></li>{% endblock  %}
+                <li class="nav-item active"><a href="accueil" class="nav-link">Accueil</a></li>
+                <li class="dropdown">
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Les Achats</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ path('importer') }}">les commandes à importer</a>
+                            <a class="dropdown-item" href="#">Abonnements</a>
+                            <a class="dropdown-item" href="#">plus nothing</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item"><a href="#" class="nav-link">Vente</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Livraison</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Services aprés vente</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">A propos</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Nous contacter</a></li>
-                <li class="nav-item"><a href="{{ path('administration') }}" class="nav-link">Administration</a></li>
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                     <li class="nav-item"><a href="#" class="nav-link"></a></li>
                     <li class="nav-item"><a href="#" class="nav-link"></a></li>
@@ -55,8 +66,8 @@
                         </a></a>
                     </li>
                 {% else %}
-                    <li class="nav-item"><a href="{{ path('fos_user_registration_register') }}" class="nav-link">S'inscrire</a></li>
-                    <li class="nav-item"><a href="{{ path('fos_user_security_login') }}" class="nav-link">S'authentifier</a></li>
+                    <li class="nav-item"><a href="register" class="nav-link">S'inscrire</a></li>
+                    <li class="nav-item"><a href="login" class="nav-link">S'authentifier</a></li>
                     <li class="nav-item"><a href="#" class="nav-link"></a></li>
                     <li class="nav-item"><a href="#" class="nav-link"></a></li>
                 {% endif %}
@@ -68,14 +79,11 @@
 </nav>
 <!-- END nav -->
 
-{% block container %}
-<div class="hero-wrap" style="background-image: url({{ asset('Bundles/ressources/front/images/bg_2.jpg') }});" data-stellar-background-ratio="0.5">
+<div class="hero-wrap" style="background-image: url({{ asset('Bundles/ressources/front/images/unnamed.jpg') }});" data-stellar-background-ratio="5">
+    {% block tssou %}{% endblock %}
 
-    {% block overlays %}
     <div class="overlay"></div>
     <div class="overlay-2"></div>
-    {% endblock overlays %}
-
     <div class="container">
         <div class="row no-gutters slider-text justify-content-center align-items-center">
             <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-end">
@@ -86,15 +94,14 @@
             </div>
         </div>
     </div>
-
     <div class="mouse">
         <a href="#" class="mouse-icon">
             <div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
         </a>
     </div>
 </div>
-{% endblock container %}
-{% block sections %}
+
+
 <section class="ftco-section ftco-no-pb">
     <div class="container">
         <div class="row">
@@ -236,7 +243,7 @@
                         </a>
                         <div class="list-agent d-flex align-items-center">
                             <a href="#" class="agent-info d-flex align-items-center">
-                                <div class="img-2 rounded-circle" style="background-image: url( images/person_1.jpg);"></div>
+                                <div class="img-2 rounded-circle" style="background-image: url(images/person_1.jpg);"></div>
                                 <h3 class="mb-0 ml-2">Ben Ford</h3>
                             </a>
                             <div class="tooltip-wrap d-flex">
@@ -667,18 +674,17 @@
     <div class="container">
         <div class="row justify-content-center pb-5">
             <div class="col-md-12 heading-section text-center ftco-animate">
-                <span class="subheading">Agents</span>
-                <h2 class="mb-4">Our Agents</h2>
+                <h2 class="mb-4">Our team</h2>
             </div>
         </div>
         <div class="row">
             <div class="col-md-3 ftco-animate">
                 <div class="agent">
                     <div class="img">
-                        <img src="images/team-1.jpg" class="img-fluid" alt="Colorlib Template">
+                        <img src="{{ asset('mortadha.jpg') }}" class="img-fluid" alt="Colorlib Template">
                     </div>
                     <div class="desc">
-                        <h3><a href="properties.html">Ben Ford</a></h3>
+                        <h3><a href="properties.html">Bouallagui Mortadha</a></h3>
                         <p class="h-info"><span class="ion-ios-filing icon"></span> <span class="details">43 Properties</span></p>
                     </div>
                 </div>
@@ -686,10 +692,10 @@
             <div class="col-md-3 ftco-animate">
                 <div class="agent">
                     <div class="img">
-                        <img src="images/team-2.jpg" class="img-fluid" alt="Colorlib Template">
+                        <img src="{{ asset('17159214_114500445748779_3759348350157753241_o.jpg') }}" class="img-fluid" alt="Colorlib Template">
                     </div>
                     <div class="desc">
-                        <h3><a href="properties.html">John Cooper</a></h3>
+                        <h3><a href="properties.html">Boujmil Tayssir</a></h3>
                         <p class="h-info"><span class="ion-ios-filing icon"></span> <span class="details">28 Properties</span></p>
                     </div>
                 </div>
@@ -789,9 +795,7 @@
         </div>
     </div>
 </section>
-{% endblock sections%}
-
-{% block footer %}
+{%  block content %}{% endblock %}
 <footer class="ftco-footer ftco-section">
     <div class="container">
         <div class="row mb-5">
@@ -861,7 +865,7 @@
         </div>
     </div>
 </footer>
-{% endblock footer %}
+
 
 
 <!-- loader -->
@@ -885,6 +889,6 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 <script src="{{ asset('Bundles/ressources/front/js/google-map.js') }}"></script>
 <script src="{{ asset('Bundles/ressources/front/js/main.js') }}"></script>
-{% block custom_scripts %}{% endblock %}
+
 </body>
 </html>

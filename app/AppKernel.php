@@ -1,5 +1,6 @@
 <?php
 
+use SBC\NotificationsBundle\NotificationsBundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
@@ -16,13 +17,17 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            new Vresh\TwilioBundle\VreshTwilioBundle(),
+
             new AppBundle\AppBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+
             new UserBundle\UserBundle(),
             new GestionAchatBundle\GestionAchatBundle(),
-            new GestionVenteBundle\GestionVenteBundle(),
-            new JMS\SerializerBundle\JMSSerializerBundle(),
-            new ToolBundle\ToolBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new Toiba\FullCalendarBundle\FullCalendarBundle(),
+            new LivraisonBundle\LivraisonBundle(),
+            new GestionStockBundle\GestionStockBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

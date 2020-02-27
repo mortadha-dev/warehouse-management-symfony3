@@ -24,10 +24,10 @@ class LoginSuccessHandler implements AuthenticationSuccessHandlerInterface {
 
         $response = null;
 
-        if ($this->authorizationChecker->isGranted('ROLE_ADMIN') and $this->authorizationChecker->isGranted("ROLE_VENTE")) {
-            $response = new RedirectResponse($this->router->generate('vente_homepage'));
+        if ($this->authorizationChecker->isGranted('ROLE_ADMIN')) {
+            $response = new RedirectResponse($this->router->generate('debou_backpage'));
         } else if ($this->authorizationChecker->isGranted('ROLE_USER')) {
-            $response = new RedirectResponse($this->router->generate('homepage'));
+            $response = new RedirectResponse($this->router->generate('debou_homepage'));
         }
 
         return $response;

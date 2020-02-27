@@ -1,0 +1,57 @@
+{% extends 'backend/base.html.twig' %}
+{% block content %}
+    <html>
+    <head>
+        <title>List des commande</title>
+        <img src="{{ asset('commande-png-2.png') }}" id="imgLogo" width="200px">
+
+    </head>
+    <body>
+    <center>
+        <h1>Liste des commandes</h1>
+        <table border="6">
+            <tr>
+                <th>libellecommande</th>
+                <th>descriptioncommande<br></th>
+                <th>commentaire du fournisseur</th>
+
+                <th>Modification</th>
+                <th>suppression</th>
+
+            </tr>
+            {% for commande in commandes %}
+                <tr>
+
+                    <td>{{ commande.fournisseur.nom}}</td>
+                    <td>{{ commande.produit.libelle}}</td>
+                    <td>{{ commande.etat}}<div style="color:red"></div></td>
+                    <td>{{ commande.prixTotal}}<div style="color:red"></div></td>
+                    <td>{{ commande.commentaire}}<div style="color:red"></div></td>
+
+
+                    <td> <a href="{{ path('gestion_achat_commande_update',{'id':commande.id}) }}">Modifier</a></td>
+                    <td> <a href="{{ path('gestion_achat_commande_delete',{'id':commande.id}) }}">supprimer</a></td>
+                </tr>
+            {% endfor %}
+
+        </table><br>
+        <div class="container navigation">
+            {{ knp_pagination_render(commandes) }}
+        </div>
+        <table>
+            <br>
+            <br>
+        <tr>
+           <td> <h3> <a href="{{ path('recherche_commande')}}" style="color:red" >recherche commande          </a></h3></td>
+            <td style="color:#f342cb"><h5>]-------------------ou bien------------------[ </h5></td>
+            <td><h3> <a href="{{ path('booking_calendar')}}" style="color:red" >consulter calendrier</a></h3></td>
+        </tr>
+
+        </table>
+    </center>
+
+    </body>
+    </html>
+{% endblock %}
+
+

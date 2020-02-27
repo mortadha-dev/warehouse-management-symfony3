@@ -18,7 +18,6 @@ use FOS\UserBundle\Form\Factory\FactoryInterface;
 use FOS\UserBundle\FOSUserEvents;
 use FOS\UserBundle\Model\UserInterface;
 use FOS\UserBundle\Model\UserManagerInterface;
-use GestionVenteBundle\Entity\Client;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -66,24 +65,14 @@ class RegistrationController extends Controller
         if (null !== $event->getResponse()) {
             return $event->getResponse();
         }
+
         $form = $this->formFactory->createForm();
         $form->setData($user);
 
         $form->handleRequest($request);
+
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
-                # add client creation and persistancy
-                ## creation
-                $client = new Client();
-                $client->setIdCompte($user->getId());
-                $client->setNom($user->getUsername());
-                $client->setPrenom("user has only username");
-                $client->setAddresse("doura");
-                $roles = $user->getRoles();
-                $roles[] = "ROLE_ADMIN";
-                $user->setRoles($roles);
-                $this->getDoctrine()->getManager()->persist($client);
-                $this->getDoctrine()->getManager()->flush();
                 $event = new FormEvent($form, $request);
                 $this->eventDispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
 

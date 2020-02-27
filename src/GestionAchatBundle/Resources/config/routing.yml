@@ -3,17 +3,69 @@ gestion_achat_homepage:
     defaults: { _controller: GestionAchatBundle:Default:index }
 
 gestion_achat_fournisseur_create:
-    path:     /create
+    path:     /administration/fournisseur/create
     defaults: { _controller: GestionAchatBundle:Fournisseur:create }
 
 gestion_achat_fournisseur_read:
-    path:     /read
+    path:     /administration/fournisseur/read
     defaults: { _controller: GestionAchatBundle:Fournisseur:read }
 
 gestion_achat_fournisseur_update:
-    path:     /update/{id}
+    path:     /administration/fournisseur/update/{id}
     defaults: { _controller: GestionAchatBundle:Fournisseur:update }
 gestion_achat_fournisseur_delete:
-    path:     /delete/{id}
+    path:     /administration/fournisseur/delete/{id}
     defaults: { _controller: GestionAchatBundle:Fournisseur:delete }
 
+gestion_achat_commande_create:
+    path:     /administration/commande/create
+    defaults: { _controller: GestionAchatBundle:Commande:create }
+
+gestion_achat_commande_read:
+    path:     /administration/commande/read
+    defaults: { _controller: GestionAchatBundle:Commande:read }
+
+gestion_achat_commande_update:
+    path:    /administration/commande/update/{id}
+    defaults: { _controller: GestionAchatBundle:Commande:update }
+gestion_achat_commande_delete:
+    path:     /administration/commande/delete/{id}
+    defaults: { _controller: GestionAchatBundle:Commande:delete }
+
+recherche_commande:
+    path: /administration/commande/recherche
+    defaults: { _controller: GestionAchatBundle:Commande:search }
+
+commande_show:
+    path: /commande/{id}/show
+    defaults: { _controller: GestionAchatBundle:Commande:show }
+    methods:  GET
+
+booking_calendar:
+    path:     /administration/commande/calendar
+    defaults: { _controller: "GestionAchatBundle:Commande:calendar" }
+    methods:  GET
+
+importer:
+    path:     /importer
+    defaults: { _controller: GestionAchatBundle:Commande:importer }
+
+accept:
+    path:     /accept/{id}
+    defaults: { _controller: GestionAchatBundle:Commande:accept }
+
+refus:
+    path:     /refus/{id}
+    defaults: { _controller: GestionAchatBundle:Commande:refus }
+
+felecit:
+    path:     /felecit
+    defaults: { _controller: GestionAchatBundle:Commande:felecit }
+
+desole:
+    path:     /desole
+    defaults: { _controller: GestionAchatBundle:Commande:desole }
+
+commentaire:
+    path:     /administration/commande/read/commentaire
+    defaults: { _controller: GestionAchatBundle:Commande:commentaire }

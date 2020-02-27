@@ -14,19 +14,19 @@ class ProduitType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('code')
             ->add('description')
             ->add('libelle')
             ->add('quantite')
             ->add('quantitemin')
-            ->add('identrepot');
+            ->add('supprimer')
+            ->add('dateSupp');
     }/**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'GestionAchatBundle\Entity\Produit'
+            'data_class' => 'GestionStockBundle\Entity\Produit'
         ));
     }
 
@@ -35,7 +35,7 @@ class ProduitType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'gestionachatbundle_produit';
+        return 'gestionstockbundle_produit';
     }
 
 

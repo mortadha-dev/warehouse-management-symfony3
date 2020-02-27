@@ -1,0 +1,13 @@
+{%  extends 'backend/base.html.twig' %}
+
+{%  block content %}
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+<body>
+    <center>
+        <img src="{{ asset('backend/dist/img/liv2.jpg') }}" width="500" height="333">
+    <h3>Ajouter Livreur</h3>
+{{ form(form) }}
+    </center>
+</body>
+    <br><br>
+{% endblock %}

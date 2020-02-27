@@ -1,0 +1,37 @@
+{% extends 'backend/base.html.twig' %}
+
+{% block content %}
+    <html>
+    <head>
+        <title>Liste des produits supprimées</title>
+    </head>
+    <body>
+    <center>
+        <h1>Liste des produits supprimées</h1>
+        <table border="1">
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Libelle</th>
+                <th>date de suppression</th>
+                <th>Récupération</th>
+
+            </tr>
+            {% for produit in produits %}
+                <tr>
+                    <td>{{ produit.id }}</td>
+                    <td>{{ produit.description }}</td>
+                    <td>{{ produit.libelle }}</td>
+                    <td>{{ produit.datesupp }}</td>
+
+                    <td> <a href="{{ path('recupereproduit',{'id':produit.id}) }}">récupérer</a></td>
+
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+
+    </body>
+    </html>
+
+{% endblock %}

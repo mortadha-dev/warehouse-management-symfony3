@@ -15,7 +15,7 @@ class UpdateFournisseurType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('civilite')
+            ->add('code')
             ->add('nom')
             ->add('prenom')
             ->add('telephone')

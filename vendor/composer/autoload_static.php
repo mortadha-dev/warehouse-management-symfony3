@@ -4,25 +4,36 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitccaa7cb6915078154514dcfff7b9f0b7
+class ComposerStaticIniteb942d15558a02c3ea03630d4fb4cb53
 {
     public static $files = array (
         '92c8763cd6170fce6fcfe7e26b4e8c10' => __DIR__ . '/..' . '/symfony/phpunit-bridge/bootstrap.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
+        'a9ed0d27b5a698798a89181429f162c5' => __DIR__ . '/..' . '/khanamiryan/qrcode-detector-decoder/lib/Common/customFunctions.php',
         '32dcc8afd4335739640db7d200c1971d' => __DIR__ . '/..' . '/symfony/polyfill-apcu/bootstrap.php',
         '6a47392539ca2329373e0d33e1dba053' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
+        'bccfaf6207f67190a92f35585e9a78b2' => __DIR__ . '/..' . '/twilio/sdk/Services/Twilio.php',
         '719971e375036615a0685b6fb054583d' => __DIR__ . '/..' . '/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php',
     );
 
     public static $prefixLengthsPsr4 = array (
+        'Z' => 
+        array (
+            'Zxing\\' => 6,
+        ),
+        'V' => 
+        array (
+            'Vresh\\TwilioBundle\\' => 19,
+        ),
         'T' => 
         array (
             'Twig\\' => 5,
+            'Toiba\\FullCalendarBundle\\' => 25,
             'Tests\\' => 6,
         ),
         'S' => 
@@ -42,7 +53,6 @@ class ComposerStaticInitccaa7cb6915078154514dcfff7b9f0b7
             'Symfony\\Bridge\\PhpUnit\\' => 23,
             'Symfony\\Bridge\\Monolog\\' => 23,
             'Symfony\\Bridge\\Doctrine\\' => 24,
-            'Stripe\\' => 7,
             'Sensio\\Bundle\\GeneratorBundle\\' => 30,
             'Sensio\\Bundle\\FrameworkExtraBundle\\' => 35,
             'Sensio\\Bundle\\DistributionBundle\\' => 33,
@@ -55,28 +65,29 @@ class ComposerStaticInitccaa7cb6915078154514dcfff7b9f0b7
             'Psr\\Link\\' => 9,
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
-            'PhpOption\\' => 10,
         ),
         'M' => 
         array (
+            'MyCLabs\\Enum\\' => 13,
             'Monolog\\' => 8,
+            'Mgilet\\NotificationBundle\\' => 26,
         ),
-        'J' => 
+        'K' => 
         array (
-            'JMS\\SerializerBundle\\' => 21,
+            'Knp\\Bundle\\PaginatorBundle\\' => 27,
         ),
         'I' => 
         array (
             'Incenteev\\ParameterHandler\\' => 27,
         ),
-        'G' => 
-        array (
-            'Gedmo\\' => 6,
-        ),
         'F' => 
         array (
             'Fig\\Link\\' => 9,
             'FOS\\UserBundle\\' => 15,
+        ),
+        'E' => 
+        array (
+            'Endroid\\QrCode\\' => 15,
         ),
         'D' => 
         array (
@@ -92,16 +103,24 @@ class ComposerStaticInitccaa7cb6915078154514dcfff7b9f0b7
         array (
             'Composer\\CaBundle\\' => 18,
         ),
-        'B' => 
-        array (
-            'Behat\\Transliterator\\' => 21,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Zxing\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/khanamiryan/qrcode-detector-decoder/lib',
+        ),
+        'Vresh\\TwilioBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/vresh/twilio-bundle',
+        ),
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
+        'Toiba\\FullCalendarBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/toiba/fullcalendar-bundle',
         ),
         'Tests\\' => 
         array (
@@ -167,10 +186,6 @@ class ComposerStaticInitccaa7cb6915078154514dcfff7b9f0b7
         array (
             0 => __DIR__ . '/..' . '/symfony/symfony/src/Symfony/Bridge/Doctrine',
         ),
-        'Stripe\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/stripe/stripe-php/lib',
-        ),
         'Sensio\\Bundle\\GeneratorBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/sensio/generator-bundle',
@@ -207,25 +222,25 @@ class ComposerStaticInitccaa7cb6915078154514dcfff7b9f0b7
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
-        'PhpOption\\' => 
+        'MyCLabs\\Enum\\' => 
         array (
-            0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
+            0 => __DIR__ . '/..' . '/myclabs/php-enum/src',
         ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
-        'JMS\\SerializerBundle\\' => 
+        'Mgilet\\NotificationBundle\\' => 
         array (
-            0 => __DIR__ . '/..' . '/jms/serializer-bundle',
+            0 => __DIR__ . '/..' . '/mgilet/notification-bundle',
+        ),
+        'Knp\\Bundle\\PaginatorBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle',
         ),
         'Incenteev\\ParameterHandler\\' => 
         array (
             0 => __DIR__ . '/..' . '/incenteev/composer-parameter-handler',
-        ),
-        'Gedmo\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/gedmo/doctrine-extensions/lib/Gedmo',
         ),
         'Fig\\Link\\' => 
         array (
@@ -234,6 +249,10 @@ class ComposerStaticInitccaa7cb6915078154514dcfff7b9f0b7
         'FOS\\UserBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/friendsofsymfony/user-bundle',
+        ),
+        'Endroid\\QrCode\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/endroid/qr-code/src',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
@@ -267,10 +286,6 @@ class ComposerStaticInitccaa7cb6915078154514dcfff7b9f0b7
         array (
             0 => __DIR__ . '/..' . '/composer/ca-bundle/src',
         ),
-        'Behat\\Transliterator\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/behat/transliterator/src/Behat/Transliterator',
-        ),
     );
 
     public static $fallbackDirsPsr4 = array (
@@ -285,29 +300,11 @@ class ComposerStaticInitccaa7cb6915078154514dcfff7b9f0b7
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
             ),
         ),
-        'P' => 
+        'K' => 
         array (
-            'PhpCollection' => 
+            'Knp\\Component' => 
             array (
-                0 => __DIR__ . '/..' . '/phpcollection/phpcollection/src',
-            ),
-        ),
-        'M' => 
-        array (
-            'Metadata\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/jms/metadata/src',
-            ),
-        ),
-        'J' => 
-        array (
-            'JMS\\Serializer' => 
-            array (
-                0 => __DIR__ . '/..' . '/jms/serializer/src',
-            ),
-            'JMS\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/jms/parser-lib/src',
+                0 => __DIR__ . '/..' . '/knplabs/knp-components/src',
             ),
         ),
         'D' => 
@@ -327,6 +324,13 @@ class ComposerStaticInitccaa7cb6915078154514dcfff7b9f0b7
             'Doctrine\\Common\\Collections\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/collections/lib',
+            ),
+        ),
+        'B' => 
+        array (
+            'BaconQrCode' => 
+            array (
+                0 => __DIR__ . '/..' . '/bacon/bacon-qr-code/src',
             ),
         ),
     );
@@ -351,11 +355,11 @@ class ComposerStaticInitccaa7cb6915078154514dcfff7b9f0b7
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitccaa7cb6915078154514dcfff7b9f0b7::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitccaa7cb6915078154514dcfff7b9f0b7::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInitccaa7cb6915078154514dcfff7b9f0b7::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitccaa7cb6915078154514dcfff7b9f0b7::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitccaa7cb6915078154514dcfff7b9f0b7::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticIniteb942d15558a02c3ea03630d4fb4cb53::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticIniteb942d15558a02c3ea03630d4fb4cb53::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticIniteb942d15558a02c3ea03630d4fb4cb53::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticIniteb942d15558a02c3ea03630d4fb4cb53::$prefixesPsr0;
+            $loader->classMap = ComposerStaticIniteb942d15558a02c3ea03630d4fb4cb53::$classMap;
 
         }, null, ClassLoader::class);
     }

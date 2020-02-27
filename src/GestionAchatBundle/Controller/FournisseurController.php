@@ -2,10 +2,10 @@
 
 namespace GestionAchatBundle\Controller;
 
-use ClubBundle\Entity\Formation;
 use GestionAchatBundle\Entity\Fournisseur;
 use GestionAchatBundle\Form\FournisseurType;
 use GestionAchatBundle\Form\UpdateFournisseurType;
+use UserBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -25,23 +25,30 @@ class FournisseurController extends Controller
         public function createAction(Request $request)
 
     {
-        $fournisseur = new Fournisseur();
-        //prepare the form with the function: createForm()
+        $fournisseur = new fournisseur();
         $form = $this->createForm(FournisseurType::class, $fournisseur);
-        //extract the form answer from the received request
         $form = $form->handleRequest($request);
-        //if this form is valid
-        if ($form->isValid()) {
-            //create an entity manager object
+
+        if ($form->isValid() && $fournisseur->getTelephone()>9999999 && $fournisseur->getTelephone()<100000000) {
+            $user = new User();
+            $user->setUsername($fournisseur->getNom());
+            $user->setEmail($fournisseur->getNom());
+            $user->setEnabled(1);
+            $user->setPlainPassword($fournisseur->getTelephone());
+            $fournisseur->setUser($user);
             $em = $this->getDoctrine()->getManager();
-            //persist the object $club in the ORM
-            $em->persist($fournisseur);
-            //update the data base with flush
+            $em->persist($user);
             $em->flush();
-            //redirect the route after the add
-            return $this->redirectToRoute('gestion_achat_fournisseur_read');
+            $em->persist($fournisseur);
+            $em->flush();
+            $this->addFlash(
+                'info',
+                'Added successfully!'
+            );
+           return $this->redirectToRoute('gestion_achat_fournisseur_read');
         }
         return $this->render('@GestionAchat/Default/create.html.twig', array(
+            'fournisseur' => $fournisseur,
             'form' => $form->createView()
         ));
     }
@@ -55,6 +62,10 @@ class FournisseurController extends Controller
             $ef= $this->getDoctrine()->getManager();
             $ef->persist($fournisseur);
             $ef->flush();
+            $this->addFlash(
+                'info',
+                'modified successfully!'
+            );
             return $this->redirectToRoute("gestion_achat_fournisseur_read");
         }
         return $this->render("@GestionAchat/Default/update.html.twig",array("forma"=>$form->createView()));
