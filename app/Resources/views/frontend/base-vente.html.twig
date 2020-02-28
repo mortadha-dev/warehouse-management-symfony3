@@ -32,7 +32,7 @@
     <div class="container">
         {#<img src="{{ asset('backend/test.jpeg') }}" alt="AdminLTE Logo" class="icon-fluid icon-thumbnail"
              style="opacity: .8">#}
-        <a class="navbar-brand" href="{{ path('homepage') }}">Debou</a>
+        <a class="navbar-brand" href="{{ path('debou_homepage') }}">Debou</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
         </button>
@@ -44,7 +44,7 @@
                 <li class="nav-item"><a href="#" class="nav-link">Livraison</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Services aprés vente</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Nous contacter</a></li>
-                <li class="nav-item"><a href="{{ path('administration') }}" class="nav-link">Administration</a></li>
+                <li class="nav-item"><a href="{{ path('debou_backpage') }}" class="nav-link">Administration</a></li>
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                     <li class="nav-item"><a href="#" class="nav-link"></a></li>
                     <li class="nav-item"><a href="#" class="nav-link"></a></li>

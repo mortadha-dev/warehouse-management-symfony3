@@ -18,20 +18,7 @@ class DefaultController extends Controller
         return $this->render('frontend/base.html.twig');
     }
 
-    /**
-     * @Route("/administration", name="administration")
-     */
-    public function administrationAction()
-    {
-        $user = $this->getUser();
-        //dump($user->getRoles());
-        if($user){
-            if ($user->hasRole("ROLE_VENTE")){
-                return $this->redirectToRoute("vente_homepage");
-            }
-        }
-        return $this->redirectToRoute("homepage");
-    }
+
 
 
 }

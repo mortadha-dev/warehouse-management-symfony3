@@ -75,6 +75,8 @@ class ComposerStaticIniteb942d15558a02c3ea03630d4fb4cb53
         ),
         'K' => 
         array (
+            'Knp\\Snappy\\' => 11,
+            'Knp\\Bundle\\SnappyBundle\\' => 24,
             'Knp\\Bundle\\PaginatorBundle\\' => 27,
         ),
         'I' => 
@@ -238,6 +240,14 @@ class ComposerStaticIniteb942d15558a02c3ea03630d4fb4cb53
         'Mgilet\\NotificationBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/mgilet/notification-bundle',
+        ),
+        'Knp\\Snappy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/knp-snappy/src/Knp/Snappy',
+        ),
+        'Knp\\Bundle\\SnappyBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/knp-snappy-bundle',
         ),
         'Knp\\Bundle\\PaginatorBundle\\' => 
         array (

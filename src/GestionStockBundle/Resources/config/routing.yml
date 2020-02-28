@@ -1,6 +1,9 @@
+
+## ENTREPOT
 gestion_stock_homepage:
     path:     /admin
     defaults: { _controller: GestionStockBundle:Entrepot:index }
+
 entrepot_homepage:
     path:     /administration/entrepot/read
     defaults: { _controller: GestionStockBundle:Entrepot:read }
@@ -13,6 +16,8 @@ update_entrepot:
 delete_entrepot:
     path:     /administration/entrepot/delete/{id}
     defaults: { _controller: GestionStockBundle:Entrepot:delete }
+
+## PRODUIT
 produit_homepage:
     path:     /administration/produit/readproduit
     defaults: { _controller: GestionStockBundle:Produit:read }
@@ -25,15 +30,18 @@ updateproduit:
 deleteproduit:
     path:     /administration/produit/deleteproduit/{id}
     defaults: { _controller: GestionStockBundle:Produit:delete }
-pdf:
-    path:     /administration/entrepot/read/pdf
-    defaults: { _controller: GestionStockBundle:Entrepot:indexx }
 produit_supprimer:
     path:     /administration/produit/produitsupp
     defaults: { _controller: GestionStockBundle:Produit:produitsupp }
 recupereproduit:
     path:     /administration/produit/produitrecupere/{id}
     defaults: { _controller: GestionStockBundle:Produit:recuperer }
+## PDF
+pdf:
+    path:     /administration/entrepot/read/pdf
+    defaults: { _controller: GestionStockBundle:Entrepot:indexx }
+
+## PROD STOCK
 produitnnstocke:
     path:     /administration/stockage/produitnnstocke
     defaults: { _controller: GestionStockBundle:Stockage:readnnstocke }

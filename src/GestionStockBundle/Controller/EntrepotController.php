@@ -7,6 +7,7 @@ use GestionStockBundle\Entity\Produit;
 use GestionStockBundle\Form\EntrepotType;
 use GestionStockBundle\Form\UpdateentrepotType;
 use GestionStockBundle\Form\UpdateproduitType;
+use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,22 +19,22 @@ class EntrepotController extends Controller
         return $this->render('@GestionStock/Entrepot/index.html.twig');
     }
     public  function indexxAction(Request $request){
-        $snappy = $this->get("knp_snappy.pdf");
-        $filename = "myfirst_pdf";
-        $websiteUrl = "http://localhost/pi-gestion_stock_tayssir/web/app_dev.php/administration/entrepot/read";
+        $entrepots=$this->getDoctrine()->getManager()->getRepository(Entrepot::class)->findAll();
+        try{
+            $this->get('knp_snappy.pdf')->generateFromHtml(
+                $this->renderView(
+                    '@GestionStock/Entrepot/read.html.twig',
+                    array(
+                        "entrepots" =>  $entrepots
+                    )
+                ),"/home/harozien/Desktop/list_entrepots.pdf"
+            );
+        } catch (\Exception $exception){
+            return $this->render('@GestionStock/Entrepot/index.html.twig');
+        }
 
-        $snappy->setOption("encoding", "UTF-8");
-        return new Response($snappy->getOutput($websiteUrl),200,array('Content-Type'=>'application/pdf',
-        'Content-Disposition'=>'inline; filename="'.$filename.'.pdf"'));
+        return $this->render('@GestionStock/Entrepot/index.html.twig');
 
-//        $snappy = $this->get("knp_snappy.pdf");
-//        $html = $this->renderView("@GestionStock/Entrepot/read.html.twig", array("title"=>"PDF title"));
-//        $filename = "myfirst_pdf";
-//        //$websiteUrl = "http://localhost/pi-gestion_stock_tayssir/web/app_dev.php/read";
-//
-//        //$snappy->setOption("encoding", "UTF-8");
-//        return new Response($snappy->getOutputFromHtml($html),200,array('Content-Type'=>'application/pdf',
-//            'Content-Disposition'=>'inline; filename="'.$filename.'.pdf"'));
     }
     public function readAction()
     {

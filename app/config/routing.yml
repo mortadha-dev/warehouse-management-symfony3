@@ -3,6 +3,11 @@ app:
     resource: "@AppBundle/Controller/"
     type:     annotation
 
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
 ## HAZEM
 vente_front:
     resource: "@GestionVenteBundle/Resources/config/routing-front.yml"
@@ -36,9 +41,6 @@ tool:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
-user:
-    resource: "@UserBundle/Resources/config/routing.yml"
-    prefix:   /
 
 toiba_fullcalendar:
     resource: "@FullCalendarBundle/Resources/config/routing.yaml"

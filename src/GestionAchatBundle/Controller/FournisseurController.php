@@ -31,10 +31,14 @@ class FournisseurController extends Controller
 
         if ($form->isValid() && $fournisseur->getTelephone()>9999999 && $fournisseur->getTelephone()<100000000) {
             $user = new User();
+            $roles = $user->getRoles();
+            $roles[]= "ROLE_FOURNISSEUR";
+            $roles[]= "ROLE_USER";
+            $user->setRoles($roles);
             $user->setUsername($fournisseur->getNom());
             $user->setEmail($fournisseur->getNom());
             $user->setEnabled(1);
-            $user->setPlainPassword($fournisseur->getTelephone());
+            $user->setPlainPassword($fournisseur->getCode());
             $fournisseur->setUser($user);
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);

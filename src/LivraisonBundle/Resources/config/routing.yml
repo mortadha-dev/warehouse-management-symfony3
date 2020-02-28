@@ -1,19 +1,24 @@
+
+## DEFAULT
 livraison_homepage:
-    path:     /admin
+    path:     /administration/Livreure/index
     defaults: { _controller: LivraisonBundle:Default:index }
+
+## LIVREUR
 read:
     path:     /administration/Livreure/read
     defaults: { _controller: LivraisonBundle:Livreure:read }
 create:
     path:      /administration/Livreure/create
     defaults: { _controller: LivraisonBundle:Livreure:create }
-
 update:
     path:      /administration/Livreure/update/{id}
     defaults: { _controller: LivraisonBundle:Livreure:update }
 delete:
     path:      /administration/Livreure/delete{id}
     defaults: { _controller: LivraisonBundle:Livreure:delete }
+
+## LIVRAISON
 readliv:
     path:     /administration/Livraison/readliv
     defaults: { _controller: LivraisonBundle:Livraison:read }
@@ -26,6 +31,8 @@ createliv:
 updateliv:
     path:     /administration/Livraison/updateliv/{id}
     defaults: { _controller: LivraisonBundle:Livraison:update }
+
+## OTHER livraison
 map:
     path:     /administration/Livraison/map
     defaults: { _controller: LivraisonBundle:Livraison:map }
@@ -33,6 +40,7 @@ map:
 call:
     path:     /administration/Livraison/call
     defaults: { _controller: LivraisonBundle:Livraison:call }
+
 qr:
     path:    /administration/qr/{id}
     defaults: { _controller: LivraisonBundle:Livraison:qr }

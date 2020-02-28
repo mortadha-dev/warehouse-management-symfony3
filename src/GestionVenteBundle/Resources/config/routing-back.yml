@@ -29,6 +29,10 @@ vente_save_commande:
     defaults: { _controller: GestionVenteBundle:CommandeVente:saveCommande }
 
 ##############CLIENT
+client_index:
+    path:   /client/index
+    defaults:   { _controller: GestionVenteBundle:Client:index }
+
 client_new:
     path:   /client/new
     defaults:   { _controller: GestionVenteBundle:Client:new }
@@ -40,10 +44,6 @@ client_edit:
 client_show:
     path:   /client/show/{id}
     defaults:   { _controller: GestionVenteBundle:Client:show }
-
-client_index:
-    path:   /client/index
-    defaults:   { _controller: GestionVenteBundle:Client:index }
 
 client_delete:
     path:   /client/delete/{id}

@@ -1,7 +1,7 @@
 {% extends 'backend/base.html.twig' %}
 {% block content %}
     <html>
-    <img src={{ asset('gestion-organisation-entrepots-méthode.jpg')}} width="350px">
+    <img src="{{ app.request.schemeAndHttpHost ~ asset('gestion-organisation-entrepots-méthode.jpg')}}" width="350px">
     <head>
         <title>Liste des entrepots</title>
     </head>
